@@ -6,7 +6,7 @@
             <i class="fas fa-search"></i>
             <input placeholder="Search">
         </div>
-        <div class="col-sm-4 pageTitle">Dashboard</div>
+        <div class="col-sm-4 pageTitle">{{title}}</div>
 
         <div class="prof ">
             <div class="prof-notif dropdown">
@@ -56,21 +56,18 @@
                     <img src="assets/images/passport.jpg" />
                     <div class="status"></div>
                 </div>
-                <div class="user-detail col-sm-10">
+                <div class="user-detail col-sm-10 dropdown">
                     <div class="inner-UD">
                         <a>Ojo Oluwatayo</a>
                         <div class="grd">
-                            <small>I'm Available Today <i class="fa fa-arrow-right"></i></small>
+                            <small>I'm Available Today <i class="rrf fa fa-arrow-right"></i></small>
                             <div class="grd_color"></div>
                         </div>
-                        <!-- <div class="dropdown-content-prof">
-                      <a><i class="fa fa-user"></i>Profile</a>
-                      <a><i class="fa fa-sign-out-alt"></i>Log-Out</a>
-                    </div> -->
+                        <div class="dropdown-content-prof"> 
+                            <a (click)="onShowProfile()"><i class="fa fa-user"></i>Profile</a>
+                            <a (click)="onLogout()"><i class="fa fa-sign-out-alt"></i>Log-Out</a>
+                        </div>
                     </div>
-                    <!-- <div class="arr">
-                    <i class="fa fa-chevron-down"></i>
-                  </div> -->
                 </div>
             </div>
         </div>
@@ -83,12 +80,39 @@
 
 <div id="mySidenav" class="sidenav">
     <div class="sidebarBTNToggle">
-        <i class="material-icons sidebarBTN" *ngIf="open" (click)="openNav()">trending_flat </i>
-        <i class="material-icons  sidebarBTN" *ngIf="close" (click)="closeNav()">keyboard_backspace</i>
+        <i class=" flaticon-arrow-pointing-to-right sidebarBTN" *ngIf="open" (click)="openNav()"></i>
+        <i class="flaticon-left-arrow  sidebarBTN" *ngIf="close" (click)="closeNav()"></i>
     </div>
 
-    <div>
-
+    <div class="navList">
+        <div routerLink="/core-module/dashboard" routerLinkActive="active" class="navItem">
+            <i class="flaticon-house"></i>
+            <a>Dashboard</a>
+        </div>
+        <div routerLinkActive="active" class="navItem">
+            <i class="flaticon-maps-and-location"></i>
+            <a>Tracking</a>
+        </div>
+        <div routerLinkActive="active" class="navItem">
+            <i class="flaticon-file"></i>
+            <a>Rota</a>
+        </div>
+        <div routerLinkActive="active" class="navItem">
+            <i class="flaticon-support"></i>
+            <a>Clients</a>
+        </div>
+        <div routerLinkActive="active" class="navItem">
+            <i class="flaticon-teamwork"></i>
+            <a>Training</a>
+        </div>
+        <div routerLinkActive="active" class="navItem">
+            <i class="flaticon-support"></i>
+            <a>Requests</a>
+        </div>
+        <div routerLinkActive="active" class="navItem">
+            <i class="flaticon-controls"></i>
+            <a>Setting</a>
+        </div>
     </div>
 </div>
 

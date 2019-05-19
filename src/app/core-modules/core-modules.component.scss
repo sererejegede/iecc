@@ -101,19 +101,11 @@
 
             .grd {
               margin-top: -8px;
+              .rrf {
+                margin-left: 15px;
+              }
               small {
                 font-size: 9px;
-                i {
-                  margin-right: 10px;
-                }
-                // display: inline-flex;
-                // justify-content: space-between;
-                // align-items: center;
-              }
-              .grd_color {
-                background: linear-gradient(90deg, #9ea7bb 0%, #35a3cb 46.35%, #004983 98.96%);
-                transform: rotate(-180deg);
-                height: 2px;
               }
             }
           }
@@ -136,7 +128,7 @@
   min-width: 150px;
   box-shadow: 0px 5px 7px 0px rgba(226, 226, 226, 0.2);
   z-index: 1;
-  border: 1px solid #9ea7bb;
+  border: 1px solid rgba(158, 167, 187, 0.292);
   border-radius: 8px;
 
   .fa {
@@ -279,7 +271,7 @@
 
 .sidebarBTN {
   color: rgb(191, 189, 189);
-  font-size: 35px;
+  font-size: 23px;
   padding: 5px;
   // border-right: 1px solid #9ea7bb;
 }
@@ -293,37 +285,45 @@
   align-items: center;
   width: 100%;
   justify-content: flex-end;
-  padding: .48em;
+  padding: 0.48em;
   border-bottom: 1px solid rgba(158, 167, 187, 0.2);
 }
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
+.sidebarBTNToggle:hover {
+  cursor: pointer;
+  background: rgba(158, 167, 187, 0.149);
 }
 
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+.rot {
+  transform: rotate(-180deg);
 }
 
 #main {
   transition: margin-left 0.5s;
   padding: 20px;
+}
+
+.navList {
+  margin-top: 60px;
+  .navItem {
+    color: #9EA7BB;
+    padding: 4px;
+    margin-bottom: 40px;
+    i {
+      padding: 5px;
+      margin: 0px 15px 0px 0px;
+      font-weight: 500;
+    }
+    a {
+      font-size: 17px;
+      font-weight: 500;
+    }
+  }
+  .active,
+  .navItem:hover {
+    color: #35a3cb;
+    border-right: 5px solid #35a3cb;
+    cursor: pointer;
+  }
 }
 
 @media screen and (max-height: 450px) {

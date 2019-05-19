@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { style } from '@angular/animations';
+import { pageloaderService } from '../services/pageloaderService';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-core-modules',
@@ -7,13 +9,18 @@ import { style } from '@angular/animations';
   styleUrls: ['./core-modules.component.scss']
 })
 export class CoreModulesComponent implements OnInit {
+ title: String;
 
   open = true;
   close = false;
 
-  constructor() { }
+  constructor(
+    private _pageloaderService: pageloaderService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this._pageloaderService.getTitle().subscribe(appTitle => this.title = appTitle);
   }
 
 
@@ -24,7 +31,7 @@ export class CoreModulesComponent implements OnInit {
     this.open = false;
     this.close = true;
   }
-  
+
   /* Set the width of the side navigation to 0 */
   closeNav() {
     document.getElementById("mySidenav").style.width = "70px";
@@ -32,5 +39,13 @@ export class CoreModulesComponent implements OnInit {
     document.getElementById("mySidenav").style.borderRight = "1px solid rgba(158, 167, 187, 0.2)";
     this.open = true;
     this.close = false;
+  }
+
+  onShowProfile(){
+    this.router.navigate([ '/core-module/profile' ]);
+  }
+
+  onLogout(){
+    this.router.navigate([ '/login' ]);
   }
 }
