@@ -1,0 +1,13 @@
+.tracking_layout{
+    display: grid;
+    grid-template-columns: 25% Auto;
+}
+
+agm-map {
+    height: 600px;
+  }
+
+  .tracking_details{
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+  }

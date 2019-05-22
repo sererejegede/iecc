@@ -2,7 +2,7 @@
 
 <div class="topBarWrap">
     <div class="top-wrap">
-        <div class="col-sm-4 srch">
+        <div class="srch">
             <i class="fas fa-search"></i>
             <input placeholder="Search">
         </div>
@@ -15,29 +15,7 @@
                 <div class="dropdown-content-notification-box">
                     <h6 class="noti-title">Notifications</h6>
                     <hr>
-                    <div class="noti-body">
-                        <div class="noti-inner-body">
-                            <div class="noti-avatar">
-                                <a>P</a>
-                            </div>
-                            <div class="noti-mssg">
-                                <a>The IECC staff policy has been updated</a>
-                                <div class="time">20mins ago</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="noti-body">
-                        <div class="noti-inner-body">
-                            <div class="noti-avatar">
-                                <a>P</a>
-                            </div>
-                            <div class="noti-mssg">
-                                <a>The IECC staff policy has been updated</a>
-                                <div class="time">20mins ago</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="noti-body">
+                    <div class="noti-body" (click)="onShowNotification()">
                         <div class="noti-inner-body">
                             <div class="noti-avatar">
                                 <a>P</a>
@@ -51,19 +29,19 @@
                 </div>
             </div>
 
-            <div class="prof-detail">
+            <div class="prof-detail dropdown">
                 <div class="user-avatar">
                     <img src="assets/images/passport.jpg" />
                     <div class="status"></div>
                 </div>
-                <div class="user-detail col-sm-10 dropdown">
+                <div class="user-detail col-sm-10 ">
                     <div class="inner-UD">
                         <a>Ojo Oluwatayo</a>
                         <div class="grd">
                             <small>I'm Available Today <i class="rrf fa fa-arrow-right"></i></small>
                             <div class="grd_color"></div>
                         </div>
-                        <div class="dropdown-content-prof"> 
+                        <div class="dropdown-content-prof">
                             <a (click)="onShowProfile()"><i class="fa fa-user"></i>Profile</a>
                             <a (click)="onLogout()"><i class="fa fa-sign-out-alt"></i>Log-Out</a>
                         </div>
@@ -89,7 +67,7 @@
             <i class="flaticon-house"></i>
             <a>Dashboard</a>
         </div>
-        <div routerLinkActive="active" class="navItem">
+        <div routerLink="/core-module/staff-tracking" routerLinkActive="active" class="navItem">
             <i class="flaticon-maps-and-location"></i>
             <a>Tracking</a>
         </div>

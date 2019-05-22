@@ -45,6 +45,10 @@ export class CoreModulesComponent implements OnInit {
     this.router.navigate([ '/core-module/profile' ]);
   }
 
+  onShowNotification(){
+    this.router.navigate([ '/core-module/notification' ]);
+  }
+
   onLogout(){
     this.router.navigate([ '/login' ]);
   }

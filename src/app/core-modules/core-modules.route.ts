@@ -2,6 +2,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CoreModulesComponent } from './core-modules.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
+import { NotificationComponent } from './notification/notification.component';
+import { StaffTrackingComponent } from './staff-tracking/staff-tracking.component';
 
 const COREMODULE_ROUTES: Routes = [
     {
@@ -9,7 +11,9 @@ const COREMODULE_ROUTES: Routes = [
         children: [
             { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
             { path: 'dashboard', component: DashboardComponent },
-            { path: 'profile', component: ProfileComponent }
+            { path: 'profile', component: ProfileComponent },
+            { path: 'notification', component: NotificationComponent },
+            { path: 'staff-tracking', component: StaffTrackingComponent }
         ]
     }
 ];

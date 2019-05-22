@@ -7,6 +7,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared-module/material-module';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import {HttpClientModule} from '@angular/common/http';
+import {AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { RegisterComponent } from './auth/register/register.component';
     BrowserModule,
     Routing,
     BrowserAnimationsModule,
-    MaterialModule 
+    MaterialModule,
+    AgmCoreModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
