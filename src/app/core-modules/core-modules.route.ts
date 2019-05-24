@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NotificationComponent } from './notification/notification.component';
 import { StaffTrackingComponent } from './staff-tracking/staff-tracking.component';
+import { RequestComponent } from './request/request.component';
 
 const COREMODULE_ROUTES: Routes = [
     {
@@ -13,7 +14,8 @@ const COREMODULE_ROUTES: Routes = [
             { path: 'dashboard', component: DashboardComponent },
             { path: 'profile', component: ProfileComponent },
             { path: 'notification', component: NotificationComponent },
-            { path: 'staff-tracking', component: StaffTrackingComponent }
+            { path: 'staff-tracking', component: StaffTrackingComponent },
+            { path: 'request', component: RequestComponent }
         ]
     }
 ];

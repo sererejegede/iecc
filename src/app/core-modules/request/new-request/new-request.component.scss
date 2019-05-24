@@ -1,0 +1,24 @@
+@import "../../../auth/auth.scss";
+
+// .grd_color{
+//   margin-top: -20px;
+//   width: 107% !important;
+// }
+
+.InputGroup-xtr {
+  mat-form-field {
+    margin-top: 25px;
+    font-size: 14px;
+    /* min-width: 230px; */
+    min-width: 100% !important;
+  }
+}
+
+.InputGroup {
+  mat-form-field {
+    margin-top: 25px;
+    font-size: 14px;
+    /* min-width: 230px; */
+    min-width: 100% !important;
+  }
+}

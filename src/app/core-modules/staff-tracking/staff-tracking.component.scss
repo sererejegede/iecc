@@ -1,13 +1,28 @@
-.tracking_layout{
-    display: grid;
-    grid-template-columns: 25% Auto;
+.tracking_layout {
+  display: grid;
+  grid-template-columns: 22% Auto;
 }
 
 agm-map {
-    height: 600px;
-  }
+  height: 600px;
+}
 
-  .tracking_details{
-      padding: 20px;
-      border-bottom: 1px solid #ddd;
+.tracking_details {
+  padding: 120px 60px 0px 60px;
+  border-bottom: 1px solid #ddd;
+}
+
+.detail {
+  color: #495268;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  padding: 10px 0px 10px 0px;
+  p {
+    margin-bottom: 0px !important;
+    margin-left: 10px;
+    text-align: left;
+    font-size: 12px;
+    max-width: 180px;
   }
+}

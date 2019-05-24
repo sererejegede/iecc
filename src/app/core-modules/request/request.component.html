@@ -1,0 +1,75 @@
+<div class="layout">
+  <div class="card">
+    <div class="top-cont">
+      <div class="col-sm-3 cont-title-date">
+        <h4>Past Requests</h4>
+        <select>
+          <option value="0">April 2019</option>
+        </select>
+      </div>
+      <div class="blue-btn" (click)="onShowNewRequest()"><i class="fa fa-plus"></i>New Request</div>
+    </div>
+    <br>
+    <hr>
+    <div class="top-cont cont-body">
+      <div class="statusP">
+        <a class="main-req">Request for absence</a>
+        <small>You made a request for leave of absence ...</small>
+      </div>
+      <div class="statusP">
+        <a>May 20th 2019</a>
+        <small>Status: <span class="green">Granted</span></small>
+      </div>
+    </div>
+    <hr>
+    <div class="top-cont cont-body">
+      <div class="statusP">
+        <a class="main-req">Request for absence</a>
+        <small>You made a request for leave of absence ...</small>
+      </div>
+      <div class="statusP">
+        <a>May 20th 2019</a>
+        <small>Status: <span class="green">Granted</span></small>
+      </div>
+    </div>
+    <hr>
+    <div class="top-cont cont-body">
+      <div class="statusP">
+        <a class="main-req">Request for absence</a>
+        <small>You made a request for leave of absence ...</small>
+      </div>
+      <div class="statusP">
+        <a>May 20th 2019</a>
+        <small>Status: <span class="green">Granted</span></small>
+      </div>
+    </div>
+    <hr>
+    <div class="top-cont cont-body">
+      <div class="statusP">
+        <a class="main-req">Request for absence</a>
+        <small>You made a request for leave of absence ...</small>
+      </div>
+      <div class="statusP">
+        <a>May 20th 2019</a>
+        <small>Status: <span class="green">Granted</span></small>
+      </div>
+    </div>
+    <hr>
+    <div class="top-cont cont-body">
+      <div class="statusP">
+        <a class="main-req">Request for absence</a>
+        <small>You made a request for leave of absence ...</small>
+      </div>
+      <div class="statusP">
+        <a>May 20th 2019</a>
+        <small>Status: <span class="green">Granted</span></small>
+      </div>
+    </div>
+    <hr>
+    <div class="blue-btn">Load More</div>
+  </div>
+</div>
+
+<div *ngIf="newRequest" class="modal-overlay">
+    <app-new-request (closeModal)="close_onClick($event)" id="form-modal" class="form-modal center-center"></app-new-request>
+</div>

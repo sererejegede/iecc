@@ -10,10 +10,12 @@ import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NotificationComponent } from './notification/notification.component';
 import { StaffTrackingComponent } from './staff-tracking/staff-tracking.component';
+import { RequestComponent } from './request/request.component';
+import { NewRequestComponent } from './request/new-request/new-request.component';
 
 
 @NgModule({
-    declarations: [CoreModulesComponent, DashboardComponent, ProfileComponent, NotificationComponent, StaffTrackingComponent],
+    declarations: [CoreModulesComponent, DashboardComponent, ProfileComponent, NotificationComponent, StaffTrackingComponent, RequestComponent, NewRequestComponent],
     imports: [CommonModule, CoreModuleRoute, MaterialModule, HttpClientModule,
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyChkzU73DZa-DM-JfpmEO1k4PCW8xX98c4'

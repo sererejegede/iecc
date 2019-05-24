@@ -46,6 +46,7 @@
       line-height: 25px;
       letter-spacing: 0.01em;
       color: #495268;
+      text-align: center;
     }
 
     .prof {
@@ -57,11 +58,15 @@
         border-right: 1px solid rgba(158, 167, 187, 0.2);
         border-left: 1px solid rgba(158, 167, 187, 0.2);
         padding: 20px 20px 10px 15px;
+        .mat-icon {
+          color: #9ea7bb;
+        }
       }
 
       .prof-notif:hover {
         background: #9ea7bb;
-        mat-icon {
+        .mat-icon {
+          color: #004983;
           cursor: pointer;
         }
       }
@@ -74,6 +79,7 @@
           position: relative;
           margin-left: 30px;
           margin-right: 10px;
+          cursor: pointer;
           img {
             width: 50px !important;
             height: 50px !important;
@@ -103,6 +109,7 @@
               font-weight: 700;
               font-size: 16px;
               color: #495268;
+              cursor: pointer;
             }
 
             .grd {
@@ -119,6 +126,13 @@
       }
     }
   }
+}
+
+.logOut {
+  color: #9ea7bb;
+  cursor: pointer;
+  font-size: 10px;
+  margin-left: 20px;
 }
 
 .dropdown {
@@ -182,8 +196,8 @@
   border: 1px solid rgba(158, 167, 187, 0.3);
   box-sizing: border-box;
   border-radius: 5px;
-  top: 70px;
-  left: -115px;
+  top: 80px;
+  left: -128px;
 
   .noti-title {
     text-align: center;
