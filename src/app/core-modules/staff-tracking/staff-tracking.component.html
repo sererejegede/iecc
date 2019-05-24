@@ -1,0 +1,34 @@
+<div class="layout">
+  <div class="card tracking_layout">
+    <div class="tracking_details">
+      <div class="track-prof">
+        <img src="assets/images/passport.jpg" />
+        <div class="statusP">
+          <a>Ojo Oluwatayo</a>
+          <small>Status: <span class="green">Clocked In</span></small>
+        </div>
+      </div>
+      <hr>
+      <div class="detail">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>22, Beacon Lodge 2 Gladstone Road,
+          Colchester, Essex, CO1 2EB</p>
+      </div>
+      <hr>
+      <div class="detail">
+        <i class="fas fa-phone"></i>
+        <p>01206793630</p>
+      </div>
+      <hr>
+      <div class="detail">
+        <i class="fas fa-at"></i>
+        <p>mercy@iecc-care.co.uk</p>
+      </div>
+      <hr>
+
+    </div>
+    <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+  </div>
+</div>

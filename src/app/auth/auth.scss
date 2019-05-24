@@ -1,0 +1,64 @@
+.auth-layout {
+  background-image: url(/assets/images/background.svg);
+  background-color: #c0c0c0;
+  background-attachment: fixed;
+  background-repeat: repeat-y;
+  background-size: cover;
+  height: -webkit-fill-available;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-form-field {
+  margin-top: 25px;
+  font-size: 14px;
+  min-width: 230px;
+}
+.grd_color {
+  margin-top: -20px;
+}
+
+.loginForm {
+  display: grid;
+  grid-gap: 15px;
+}
+
+.action-bottom {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px;
+  a {
+    font-size: 12px;
+    margin: 20px;
+    span{
+        cursor: pointer;
+    }
+  }
+}
+
+.logo {
+  padding: 20px;
+  img {
+    width: 150px !important;
+    // height: 100px !important;
+  }
+}
+
+.login-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.reg {
+    font-weight: 600;
+    font-size: 14px;
+    span {
+      color: #004983;
+    }
+  }

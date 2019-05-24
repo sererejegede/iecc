@@ -1,3 +1,103 @@
-<p>
-  dashboard works!
-</p>
+<div class="layout">
+  <div class="dashboard-layout">
+    <div class="card shift-no">
+      <div class="top_shift">
+        <h6>Shifts</h6>
+        <select>
+          <option value="0">Today</option>
+        </select>
+      </div>
+      <div class="top_shift xt">
+        <a class="shift_no">6</a>
+      </div>
+      <div class="primary-btn" style="width: 200px; align-self: center;">See Shifts <i
+          class="fa fa-long-arrow-alt-right"></i></div>
+    </div>
+    <div class="card">
+      <div class="gph_detail col-sm-12">
+        <div class="gph col-sm-9">
+          <div class="top_shift">
+            <h6>Payroll Calculator</h6>
+            <select>
+              <option value="0">April 2019</option>
+            </select>
+          </div>
+          <div class="line-chart">
+            <canvas class="convas_line" id="lineChart" chart-colors="colors"></canvas>
+          </div>
+        </div>
+        <div class="cl">
+          <div class="tp">
+            <h6>Total pay for April 2019 </h6>
+          </div>
+          <div>
+            <a class="amt_sub">You have earned a total of</a>
+            <br>
+            <a class="amt">$2400</a>
+          </div>
+          <div class="primary-btn">See Shifts <i class="fa fa-long-arrow-alt-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card cl" style="padding: 20px 30px 0px 30px;">
+      <div class="top_shift">
+        <h6>Upcoming Trainings</h6>
+        <i class=" flaticon-arrow-pointing-to-right"></i>
+      </div>
+      <div class="trn">
+        <i class="fa fa-plus"></i>
+        <div>
+          <a>Health Care Camp (required)</a>
+          <div>20th May 2019, 9:00am</div>
+        </div>
+      </div>
+      <div class="trn">
+        <i class="fa fa-plus"></i>
+        <div>
+          <a>Health Care Camp (required)</a>
+          <div>20th May 2019, 9:00am</div>
+        </div>
+      </div>
+      <div class="trn">
+        <i class="fa fa-plus"></i>
+        <div>
+          <a>Health Care Camp (required)</a>
+          <div>20th May 2019, 9:00am</div>
+        </div>
+      </div>
+      <div class="trn">
+        <i class="fa fa-plus"></i>
+        <div>
+          <a>Health Care Camp (required)</a>
+          <div>20th May 2019, 9:00am</div>
+        </div>
+      </div>
+    </div>
+    <div class="card col-sm-12">
+      <div class="gph_detail col-sm-12">
+        <div class="gph col-sm-9">
+          <agm-map [latitude]="lat" [longitude]="lng">
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+          </agm-map>
+        </div>
+        <div class="cl">
+          <div class="tp">
+            <h6>Staff Tracking</h6>
+          </div>
+          <div class="track-prof">
+            <img src="assets/images/passport.jpg" />
+            <div class="statusP">
+              <a>Ojo Oluwatayo</a>
+              <small>Status: <span class="green">Clocked In</span></small>
+            </div>
+          </div>
+          <p>Adress: <br>22, Beacon Lodge 2 Gladstone Road,<br>
+            Colchester, Essex, CO1 2EB</p>
+          <div class="primary-btn">View Details <i class="fa fa-long-arrow-alt-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
