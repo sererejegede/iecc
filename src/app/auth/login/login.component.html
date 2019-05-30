@@ -3,20 +3,27 @@
     <div class="logo">
       <img src="assets/images/IECC Logo.PNG">
     </div>
-    <form class="loginForm">
-      <div class="form-input">
-        <mat-form-field>
-          <input matInput placeholder="Email Address">
-        </mat-form-field>
-        <div class="grd_color"></div>
-        <mat-form-field>
-          <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'">
-          <mat-icon style="cursor: pointer;" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}
-          </mat-icon>
-        </mat-form-field>
-        <div class="grd_color"></div>
+    <div class="body">
+      <form class="loginForm">
+        <div class="form-input">
+          <mat-form-field>
+            <input matInput placeholder="Email Address">
+          </mat-form-field>
+          <div class="grd_color"></div>
+          <mat-form-field>
+            <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'">
+            <mat-icon style="cursor: pointer;" matSuffix (click)="hide = !hide">
+              {{hide ? 'visibility_off' : 'visibility'}}
+            </mat-icon>
+          </mat-form-field>
+          <div class="grd_color"></div>
+        </div>
+      </form>
+      <div style="margin-top: 10px;">
+        <a (click)="onForget()">Forgot Password ?</a>
       </div>
-    </form>
+    </div>
+
     <div class="action-bottom col-md-10">
       <div (click)="onLogin()" class="primary-btn">Login</div>
       <a class="reg">Don’t have an account? <span (click)="onRegister()">Sign up</span></a>

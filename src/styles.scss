@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+@import "~@fullcalendar/core/main.css";
+@import "~@fullcalendar/daygrid/main.css";
+
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
@@ -230,5 +233,142 @@ select {
     width: 100% !important;
     box-sizing: border-box;
     margin-bottom: 20px;
+  }
+}
+.noti-color-blue {
+  background: #11315b;
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  padding: 5px;
+}
+.noti-color-green {
+  background: #50b748;
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.noti-color-orange {
+  background: #d69d0b;
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.blue {
+  color: #11315b;
+  font-weight: 600;
+}
+.green {
+  color: #50b748;
+  font-weight: 600;
+}
+
+.orange {
+  color: #d69d0b;
+  font-weight: 600;
+}
+
+.cont-title-date {
+  color: #495268;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gph_detail {
+  display: flex;
+  padding: 0px 0px 0px 0px !important;
+  // align-items: center;
+  // justify-content: space-between;
+  .cl {
+    text-align: center;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #004983;
+    width: 100%;
+    p {
+      text-align: center;
+      font-weight: 600;
+      font-size: 11px;
+      line-height: 27.5px;
+    }
+    .amt_sub {
+      color: #9ea7bb;
+      font-size: 11px;
+    }
+    .amt {
+      color: #004983;
+      font-weight: 700;
+      font-size: 45px;
+    }
+    .primary-btn {
+      width: 150px;
+    }
+    .tp {
+      border-bottom: 1px solid #ddd;
+      width: inherit;
+      h6 {
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 20px;
+        margin: 20px;
+      }
+    }
+  }
+  .gph {
+    border-right: 1px solid rgba(158, 167, 187, 0.3);
+    padding: 20px 20px 20px 20px !important;
+  }
+  .gph:after {
+    content: " ";
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid transparent;
+    border-left: 10px solid rgba(158, 167, 187, 0.3);
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid transparent;
+    position: absolute;
+    top: 180px;
+    right: -20px;
+    // margin-bottom: 100px;
+  }
+}
+
+.convas_line {
+  display: block;
+  height: 286px !important;
+  width: 554px !important;
+  margin: 30px 0px 0px 0;
+}
+
+.line-chart {
+  animation: fadeIn 600ms cubic-bezier(0.57, 0.25, 0.65, 1) 1 forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //   padding: 25px;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.trn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 15px;
+  color: #004983;
+  a,
+  div {
+    font-size: 12px;
+    font-weight: 600;
   }
 }

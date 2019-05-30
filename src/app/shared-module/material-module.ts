@@ -31,6 +31,7 @@ import {
 	MatSidenavModule,
 	MatToolbarModule
 } from '@angular/material';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
 @NgModule({
 	declarations: [],
@@ -62,7 +63,8 @@ import {
 		MatSlideToggleModule,
 		MatProgressBarModule,
 		MatSidenavModule,
-		MatToolbarModule
+		MatToolbarModule,
+		MatMomentDateModule
 	],
 	exports: [
 		MatNativeDateModule,
@@ -92,7 +94,8 @@ import {
 		MatSlideToggleModule,
 		MatProgressBarModule,
 		MatSidenavModule,
-		MatToolbarModule
+		MatToolbarModule,
+		MatMomentDateModule
 	],
 	providers: []
 })

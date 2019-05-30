@@ -1,5 +1,9 @@
 @import "./../auth.scss";
 
-
-
-
+.body a{
+  color: #004983 !important;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+}

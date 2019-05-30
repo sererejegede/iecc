@@ -1,0 +1,88 @@
+<div class="layout">
+  <div class="card">
+    <div class="cont-title-date">
+      <h4>Client List</h4>
+      <div (click)="onShowNewClient()" class="blue-btn"><i class="fa fa-plus"></i>New Client</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3 client-card">
+        <div class="edit-wrap">
+          <h6 (click)="onShowDetail()">Mercy Daracan</h6>
+          <i (click)="onShowNewClient()" class="fa fa-edit"></i>
+        </div>
+        <p>22, Beacon Lodge 2 Gladstone Road,
+          Colchester, Essex, CO1 2EB</p>
+        <a>Personal care plan</a>
+      </div>
+      <div class="col-sm-3 client-card">
+        <div class="edit-wrap">
+          <h6 (click)="onShowDetail()">Mercy Daracan</h6>
+          <i (click)="onShowNewClient()" class="fa fa-edit"></i>
+        </div>
+        <p>22, Beacon Lodge 2 Gladstone Road,
+          Colchester, Essex, CO1 2EB</p>
+        <a>Personal care plan</a>
+      </div>
+      <div class="col-sm-3 client-card">
+        <div class="edit-wrap">
+          <h6 (click)="onShowDetail()">Mercy Daracan</h6>
+          <i (click)="onShowNewClient()" class="fa fa-edit"></i>
+        </div>
+        <p>22, Beacon Lodge 2 Gladstone Road,
+          Colchester, Essex, CO1 2EB</p>
+        <a>Personal care plan</a>
+      </div>
+      <div class="col-sm-3 client-card">
+        <div class="edit-wrap">
+          <h6 (click)="onShowDetail()">Mercy Daracan</h6>
+          <i (click)="onShowNewClient()" class="fa fa-edit"></i>
+        </div>
+        <p>22, Beacon Lodge 2 Gladstone Road,
+          Colchester, Essex, CO1 2EB</p>
+        <a>Personal care plan</a>
+      </div>
+      <div class="col-sm-3 client-card">
+        <div class="edit-wrap">
+          <h6>Mercy Daracan</h6>
+          <i class="fa fa-edit"></i>
+        </div>
+        <p>22, Beacon Lodge 2 Gladstone Road,
+          Colchester, Essex, CO1 2EB</p>
+        <a>Personal care plan</a>
+      </div>
+      <div class="col-sm-3 client-card">
+        <div class="edit-wrap">
+          <h6>Mercy Daracan</h6>
+          <i class="fa fa-edit"></i>
+        </div>
+        <p>22, Beacon Lodge 2 Gladstone Road,
+          Colchester, Essex, CO1 2EB</p>
+        <a>Personal care plan</a>
+      </div>
+      <div class="col-sm-3 client-card">
+        <div class="edit-wrap">
+          <h6>Mercy Daracan</h6>
+          <i class="fa fa-edit"></i>
+        </div>
+        <p>22, Beacon Lodge 2 Gladstone Road,
+          Colchester, Essex, CO1 2EB</p>
+        <a>Personal care plan</a>
+      </div>
+      <div class="col-sm-3 client-card">
+        <div class="edit-wrap">
+          <h6>Mercy Daracan</h6>
+          <i class="fa fa-edit"></i>
+        </div>
+        <p>22, Beacon Lodge 2 Gladstone Road,
+          Colchester, Essex, CO1 2EB</p>
+        <a>Personal care plan</a>
+      </div>
+    </div>
+    <div class="blue-btn">Load More</div>
+  </div>
+</div>
+
+<div *ngIf="newClientPopup" class="modal-overlay">
+  <app-new-client (closeModal)="close_onClick($event)" id="form-modal" class="form-modal center-center">
+  </app-new-client>
+</div>

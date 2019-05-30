@@ -5,6 +5,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { NotificationComponent } from './notification/notification.component';
 import { StaffTrackingComponent } from './staff-tracking/staff-tracking.component';
 import { RequestComponent } from './request/request.component';
+import { ClientsComponent } from './clients/clients.component';
+import { RotaComponent } from './rota/rota.component';
+import { ClientDetailsComponent } from './clients/client-details/client-details.component';
+import { PayrollReportComponent } from './payroll-report/payroll-report.component';
 
 const COREMODULE_ROUTES: Routes = [
     {
@@ -15,7 +19,11 @@ const COREMODULE_ROUTES: Routes = [
             { path: 'profile', component: ProfileComponent },
             { path: 'notification', component: NotificationComponent },
             { path: 'staff-tracking', component: StaffTrackingComponent },
-            { path: 'request', component: RequestComponent }
+            { path: 'request', component: RequestComponent },
+            { path: 'clients', component: ClientsComponent },
+            { path: 'client-details', component: ClientDetailsComponent },
+            { path: 'rota', component: RotaComponent },
+            { path: 'reports', component: PayrollReportComponent }
         ]
     }
 ];

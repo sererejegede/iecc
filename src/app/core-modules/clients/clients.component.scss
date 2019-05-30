@@ -1,0 +1,46 @@
+.card {
+  padding: 30px;
+}
+
+.client-card {
+  padding: 20px;
+  border: 1px solid rgba(73, 82, 104, 0.15);
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin: 10px;
+  p,
+  a {
+    font-size: 12px !important;
+    color: #9b9b9b;
+  }
+
+  h6 {
+    color: #4a4a4a;
+  }
+
+  .edit-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    i {
+      color: #9ea7bb;
+      font-weight: 100 !important;
+    }
+    i:hover{
+      color: #4a4a4a;
+    }
+  }
+}
+.col-sm-3 {
+  flex: 0 0 23%;
+  max-width: 23% !important;
+}
+
+.client-card:hover {
+  box-shadow: 0px 0px 2px rgba(67, 102, 118, 0.501217);
+  cursor: pointer;
+}
+
+.cont-title-date {
+  justify-content: space-between !important;
+}

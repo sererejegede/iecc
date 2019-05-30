@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import swal from 'sweetalert2';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent implements OnInit {
 
   hide = true;
@@ -14,11 +17,27 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  onRegister(){
-    this.router.navigate([ '/register' ]);
+  onForget() {
+    this.router.navigate(['/forget-password']);
   }
 
-  onLogin(){
-    this.router.navigate([ '/core-module' ]);
+  onRegister() {
+    this.router.navigate(['/register']);
   }
+
+  onLogin() {
+    swal.fire({
+      position: 'top-end',
+      type: 'success',
+      title: 'Login Successful',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    this.router.navigate(['/core-module']);
+  }
+
+
 }
+
+
+

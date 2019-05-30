@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-register',
@@ -12,6 +14,17 @@ export class RegisterComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onRegister() {
+    swal.fire({
+      position: 'top-end',
+      type: 'success',
+      title: 'Registration Successful',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    this.router.navigate(['/core-module']);
   }
 
   backToLogin() {
