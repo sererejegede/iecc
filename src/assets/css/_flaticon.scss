@@ -1,6 +1,6 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 17/05/2019 19:58
+    Creation date: 30/05/2019 15:35
     */
 
     @font-face {
@@ -48,6 +48,8 @@
 .flaticon-support:before { content: "\f108"; }
 .flaticon-controls:before { content: "\f109"; }
 .flaticon-teamwork:before { content: "\f10a"; }
+.flaticon-support-1:before { content: "\f10b"; }
+.flaticon-plan:before { content: "\f10c"; }
     
     $font-Flaticon-house: "\f100";
     $font-Flaticon-left-arrow: "\f101";
@@ -60,3 +62,5 @@
     $font-Flaticon-support: "\f108";
     $font-Flaticon-controls: "\f109";
     $font-Flaticon-teamwork: "\f10a";
+    $font-Flaticon-support-1: "\f10b";
+    $font-Flaticon-plan: "\f10c";

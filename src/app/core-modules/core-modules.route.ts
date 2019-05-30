@@ -7,6 +7,8 @@ import { StaffTrackingComponent } from './staff-tracking/staff-tracking.componen
 import { RequestComponent } from './request/request.component';
 import { ClientsComponent } from './clients/clients.component';
 import { RotaComponent } from './rota/rota.component';
+import { ClientDetailsComponent } from './clients/client-details/client-details.component';
+import { PayrollReportComponent } from './payroll-report/payroll-report.component';
 
 const COREMODULE_ROUTES: Routes = [
     {
@@ -19,7 +21,9 @@ const COREMODULE_ROUTES: Routes = [
             { path: 'staff-tracking', component: StaffTrackingComponent },
             { path: 'request', component: RequestComponent },
             { path: 'clients', component: ClientsComponent },
-            { path: 'rota', component: RotaComponent }
+            { path: 'client-details', component: ClientDetailsComponent },
+            { path: 'rota', component: RotaComponent },
+            { path: 'reports', component: PayrollReportComponent }
         ]
     }
 ];

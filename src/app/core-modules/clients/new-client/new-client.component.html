@@ -161,13 +161,38 @@
         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
             <mat-panel-title>
-              Self aware panel
+              GP Details
             </mat-panel-title>
-            <mat-panel-description>
-              Currently I am {{panelOpenState ? 'open' : 'closed'}}
-            </mat-panel-description>
           </mat-expansion-panel-header>
-          <p>I'm visible because I am open</p>
+          <div class="input-group">
+            <div class="input-group-wrap">
+              <div class="InputGroup">
+                <mat-form-field>
+                  <input matInput placeholder="Details">
+                </mat-form-field>
+              </div>
+              <div class="grd_color"></div>
+            </div>
+
+            <div class="input-group-wrap">
+              <div class="InputGroup">
+                <mat-form-field>
+                  <input matInput type="number" placeholder="Telephone No.">
+                </mat-form-field>
+              </div>
+              <div class="grd_color"></div>
+            </div>
+          </div>
+
+
+          <div class="input-group-wrap">
+            <div class="InputGroup">
+              <mat-form-field style="width: 100%;">
+                <textarea matInput placeholder="Address"></textarea>
+              </mat-form-field>
+            </div>
+            <div class="grd_color"></div>
+          </div>
         </mat-expansion-panel>
       </mat-accordion>
 

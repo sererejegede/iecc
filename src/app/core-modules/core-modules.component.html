@@ -36,7 +36,8 @@
             </div>
 
             <div class="prof-detail ">
-                <div class="user-avatar" (click)="onShowProfile()" data-toggle="tooltip" data-placement="bottom" title="Profile">
+                <div class="user-avatar" (click)="onShowProfile()" data-toggle="tooltip" data-placement="bottom"
+                    title="Profile">
                     <img src="assets/images/passport.jpg" />
                     <div class="status"></div>
                 </div>
@@ -45,8 +46,10 @@
                         <a (click)="onShowProfile()">Ojo Oluwatayo</a>
                         <div class="grd">
                             <div>
-                                <small (click)="onRequest()" data-toggle="tooltip" data-placement="bottom" title="Make Request">I'm Available Today</small>
-                                <i data-toggle="tooltip" data-placement="bottom" title="Log-Out" class="fa fa-sign-out-alt logOut" (click)="onLogout()"></i>
+                                <small data-toggle="tooltip" data-placement="bottom" title="Make Request">I'm Available
+                                    Today</small>
+                                <i data-toggle="tooltip" data-placement="bottom" title="Log-Out"
+                                    class="fa fa-sign-out-alt logOut" (click)="onLogout()"></i>
                             </div>
                             <div class="grd_color"></div>
                         </div>
@@ -70,31 +73,39 @@
     </div>
 
     <div class="navList">
-        <div routerLink="/core-module/dashboard" routerLinkActive="active" class="navItem">
+        <div routerLink="/core-module/dashboard" routerLinkActive="active" class="navItem" data-toggle="tooltip" title="Dashboard">
             <i class="flaticon-house"></i>
             <a>Dashboard</a>
         </div>
-        <div routerLink="/core-module/staff-tracking" routerLinkActive="active" class="navItem">
+        <div routerLink="/core-module/staff-tracking" routerLinkActive="active" class="navItem" data-toggle="tooltip" title="Staff Tracking">
             <i class="flaticon-maps-and-location"></i>
             <a>Tracking</a>
         </div>
-        <div routerLink="/core-module/rota"  routerLinkActive="active" class="navItem">
+        <div routerLink="/core-module/rota" routerLinkActive="active" class="navItem" data-toggle="tooltip" title="Rota">
             <i class="flaticon-file"></i>
             <a>Rota</a>
         </div>
-        <div routerLink="/core-module/clients" routerLinkActive="active" class="navItem">
+        <div routerLink="/core-module/reports" routerLinkActive="active" class="navItem" data-toggle="tooltip" title="Reports">
+            <i class="flaticon-chart"></i>
+            <a>Reports</a>
+        </div>
+        <div routerLink="/core-module/clients" routerLinkActive="active" class="navItem" data-toggle="tooltip" title="Clients">
             <i class="flaticon-support"></i>
             <a>Clients</a>
         </div>
-        <div routerLinkActive="active" class="navItem">
+        <div routerLinkActive="active" class="navItem" data-toggle="tooltip" title="Training">
             <i class="flaticon-teamwork"></i>
             <a>Training</a>
         </div>
-        <div routerLink="/core-module/request"  routerLinkActive="active" class="navItem">
-            <i class="flaticon-support"></i>
+        <div routerLink="/core-module/request" routerLinkActive="active" class="navItem" data-toggle="tooltip" title="Requests">
+            <i class="flaticon-support-1"></i>
             <a>Requests</a>
         </div>
-        <div routerLinkActive="active" class="navItem">
+        <div routerLink="/core-module/forum" routerLinkActive="active" class="navItem" data-toggle="tooltip" title="Forum">
+            <i class="flaticon-plan"></i>
+            <a>Forum</a>
+        </div>
+        <div routerLinkActive="active" class="navItem" data-toggle="tooltip" title="Setting">
             <i class="flaticon-controls"></i>
             <a>Setting</a>
         </div>
