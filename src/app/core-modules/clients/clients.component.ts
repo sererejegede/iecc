@@ -7,6 +7,7 @@ import { pageloaderService } from 'src/app/services/pageloaderService';
   styleUrls: ['./clients.component.scss']
 })
 export class ClientsComponent implements OnInit {
+  newClientPopup = false;
 
   constructor(private _pageloaderService: pageloaderService) { }
 
@@ -14,4 +15,13 @@ export class ClientsComponent implements OnInit {
     this._pageloaderService.setTitle('Clients')
   }
 
+
+  close_onClick(e) {
+    this.newClientPopup = false;
+  }
+
+
+  onShowNewClient(){
+    this.newClientPopup = true;
+  }
 }

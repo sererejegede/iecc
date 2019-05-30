@@ -17,4 +17,8 @@ export class ForgetPasswordComponent implements OnInit {
     this.router.navigate([ '/login' ]);
   }
 
+  onRequestPassword(){
+    this.router.navigate(['/new-password']);
+  }
+
 }

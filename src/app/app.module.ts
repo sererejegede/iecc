@@ -10,7 +10,10 @@ import { RegisterComponent } from './auth/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 import { ForgetPasswordComponent } from './auth/forget-password/forget-password.component';
+import { NewPasswordComponent } from './auth/new-password/new-password.component';
 
+
+import swal from 'sweetalert2';
 
 
 @NgModule({
@@ -18,7 +21,8 @@ import { ForgetPasswordComponent } from './auth/forget-password/forget-password.
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    ForgetPasswordComponent
+    ForgetPasswordComponent,
+    NewPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +31,12 @@ import { ForgetPasswordComponent } from './auth/forget-password/forget-password.
     MaterialModule,
     AgmCoreModule,
     HttpClientModule
+    // SweetAlert2Module.forRoot({
+    //   buttonsStyling: false,
+    //   customClass: 'modal-content',
+    //   confirmButtonClass: 'btn btn-primary',
+    //   cancelButtonClass: 'btn'
+    // })
   ],
   providers: [],
   bootstrap: [AppComponent]

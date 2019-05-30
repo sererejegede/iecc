@@ -1,0 +1,181 @@
+<div class="animated pulse">
+  <div class="modal-header-wrap">
+    <div (click)="close_onClick()" class="modal-close-ico" aria-hidden="true">X</div>
+  </div>
+  <div class="modal-baseWrap">
+    <br>
+    <form>
+      <div class="input-group">
+        <div class="input-group-wrap">
+          <div class="InputGroup">
+            <mat-form-field>
+              <mat-label>Client Name</mat-label>
+              <mat-select>
+                <mat-option>Omoyemi Hammed</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="grd_color"></div>
+        </div>
+
+        <div class="input-group-wrap">
+          <div class="InputGroup">
+            <mat-form-field>
+              <input matInput [matDatepicker]="dob" placeholder="Date of Birth">
+              <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
+              <mat-datepicker #dob></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="grd_color"></div>
+        </div>
+      </div>
+
+
+      <div class="input-group-wrap">
+        <div class="InputGroup">
+          <mat-form-field style="width: 100%;">
+            <textarea matInput placeholder="Current Address"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="grd_color"></div>
+      </div>
+
+      <div class="input-group">
+        <div class="input-group-wrap">
+          <div class="InputGroup">
+            <mat-form-field>
+              <input matInput type="number" placeholder="Telephone">
+            </mat-form-field>
+          </div>
+          <div class="grd_color"></div>
+        </div>
+
+        <div class="input-group-wrap">
+          <div class="InputGroup">
+            <mat-form-field>
+              <input matInput type="number" placeholder="Mobile">
+            </mat-form-field>
+          </div>
+          <div class="grd_color"></div>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div class="input-group-wrap">
+          <div class="InputGroup">
+            <mat-form-field>
+              <input matInput [matDatepicker]="dia" placeholder="Date of Initial Assessment">
+              <mat-datepicker-toggle matSuffix [for]="dia"></mat-datepicker-toggle>
+              <mat-datepicker #dia></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="grd_color"></div>
+        </div>
+
+        <div class="input-group-wrap">
+          <div class="InputGroup">
+            <mat-form-field>
+              <input matInput [matDatepicker]="doa" placeholder="Date of Admission">
+              <mat-datepicker-toggle matSuffix [for]="doa"></mat-datepicker-toggle>
+              <mat-datepicker #doa></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="grd_color"></div>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div class="input-group-wrap">
+          <div class="InputGroup">
+            <mat-form-field>
+              <input matInput placeholder="Person ID Number">
+            </mat-form-field>
+          </div>
+          <div class="grd_color"></div>
+        </div>
+
+        <div class="input-group-wrap">
+          <div class="InputGroup">
+            <mat-form-field>
+              <input matInput placeholder="NHIS No.">
+            </mat-form-field>
+          </div>
+          <div class="grd_color"></div>
+        </div>
+      </div>
+
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Next of Kin
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="input-group">
+            <div class="input-group-wrap">
+              <div class="InputGroup">
+                <mat-form-field>
+                  <input matInput placeholder="Next of Kin">
+                </mat-form-field>
+              </div>
+              <div class="grd_color"></div>
+            </div>
+
+            <div class="input-group-wrap">
+              <div class="InputGroup">
+                <mat-form-field>
+                  <mat-label>Relationship</mat-label>
+                  <mat-select>
+                    <mat-option value="0">Father</mat-option>
+                    <mat-option value="1">Mother</mat-option>
+                    <mat-option value="2">Wife</mat-option>
+                    <mat-option value="3">Husband</mat-option>
+                    <mat-option value="4">Brother</mat-option>
+                    <mat-option value="5">Sister</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="grd_color"></div>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input-group-wrap">
+              <div class="InputGroup">
+                <mat-form-field>
+                  <input matInput type="number" placeholder="Telephone No.">
+                </mat-form-field>
+              </div>
+              <div class="grd_color"></div>
+            </div>
+
+            <div class="input-group-wrap">
+              <div class="InputGroup">
+                <mat-form-field>
+                  <input matInput placeholder="Address">
+                </mat-form-field>
+              </div>
+              <div class="grd_color"></div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Self aware panel
+            </mat-panel-title>
+            <mat-panel-description>
+              Currently I am {{panelOpenState ? 'open' : 'closed'}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+
+    </form>
+
+    <div class="btn-wrap">
+      <div class="primary-btn">Submit</div>
+    </div>
+  </div>
+</div>

@@ -36,4 +36,8 @@ export class RotaComponent implements OnInit {
     this.newRoaster = false;
     this.rotaDetail = true;
   }
+
+  onDateChanged() {
+    // this.selectedDate=Date.now;
+  }
 }
