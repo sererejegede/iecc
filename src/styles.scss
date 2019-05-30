@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+@import "~@fullcalendar/core/main.css";
+@import "~@fullcalendar/daygrid/main.css";
+
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
@@ -231,4 +234,40 @@ select {
     box-sizing: border-box;
     margin-bottom: 20px;
   }
+}
+.noti-color-blue{
+  background: #11315b;
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  padding: 5px;
+}
+.noti-color-green{
+  background: #50B748;
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.noti-color-orange{
+  background: #D69D0B;
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.blue{
+  color: #11315b;
+  font-weight: 600;
+}
+.green{
+  color: #50B748;
+  font-weight: 600;
+}
+
+.orange{
+  color: #D69D0B;
+  font-weight: 600;
 }

@@ -14,11 +14,15 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  onRegister(){
-    this.router.navigate([ '/register' ]);
+  onForget() {
+    this.router.navigate(['/forget-password']);
   }
 
-  onLogin(){
-    this.router.navigate([ '/core-module' ]);
+  onRegister() {
+    this.router.navigate(['/register']);
+  }
+
+  onLogin() {
+    this.router.navigate(['/core-module']);
   }
 }

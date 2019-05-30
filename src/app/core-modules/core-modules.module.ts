@@ -12,11 +12,16 @@ import { NotificationComponent } from './notification/notification.component';
 import { StaffTrackingComponent } from './staff-tracking/staff-tracking.component';
 import { RequestComponent } from './request/request.component';
 import { NewRequestComponent } from './request/new-request/new-request.component';
+import { ClientsComponent } from './clients/clients.component';
+import { RotaComponent } from './rota/rota.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { NewRosterComponent } from './rota/new-roster/new-roster.component';
+import { RotaDetailsComponent } from './rota/rota-details/rota-details.component';
 
 
 @NgModule({
-    declarations: [CoreModulesComponent, DashboardComponent, ProfileComponent, NotificationComponent, StaffTrackingComponent, RequestComponent, NewRequestComponent],
-    imports: [CommonModule, CoreModuleRoute, MaterialModule, HttpClientModule,
+    declarations: [CoreModulesComponent, DashboardComponent, ProfileComponent, NotificationComponent, StaffTrackingComponent, RequestComponent, NewRequestComponent, ClientsComponent, RotaComponent, NewRosterComponent, RotaDetailsComponent],
+    imports: [CommonModule, CoreModuleRoute, FullCalendarModule, MaterialModule, HttpClientModule,
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyChkzU73DZa-DM-JfpmEO1k4PCW8xX98c4'
         })],

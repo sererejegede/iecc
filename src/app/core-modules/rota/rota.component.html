@@ -1,0 +1,57 @@
+<div class="layout">
+  <div class="card roaster-layout">
+    <div class="roasterDetails">
+      <div class="topAction">
+        <h5>{{selectedDate | date}}</h5>
+        <div (click)="onShowAddRota()" class="blue-btn"><i class="fa fa-plus"></i>New Rota</div>
+      </div>
+      <div class="rotaDetail">
+        <div class="noti-color-blue"></div>
+        <div>
+          <a>Mercy Daaracan</a><br>
+          <small>London</small>
+        </div>
+        <div>
+          <div>8:00am - 12:00pm</div>
+          <small>Status - <span class="blue">Completed</span></small>
+        </div>
+      </div>
+      <div class="rotaDetail">
+        <div class="noti-color-green"></div>
+        <div>
+          <a>Mercy Daaracan</a><br>
+          <small>London</small>
+        </div>
+        <div>
+          <div>8:00am - 12:00pm</div>
+          <small>Status - <span class="green">Ongoing</span></small>
+        </div>
+      </div>
+      <div (click)="onShowRotaDetail()" class="rotaDetail">
+        <div class="noti-color-orange"></div>
+        <div>
+          <a>Mercy Daaracan</a><br>
+          <small>London</small>
+        </div>
+        <div>
+          <div>8:00am - 12:00pm</div>
+          <small>Status - <span class="orange">Pending</span></small>
+        </div>
+      </div>
+
+    </div>
+    <div class="calendarView">
+      <mat-calendar #calendar [(selected)]="selectedDate" (selectedChange)="onDateChanged($event)"></mat-calendar>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="newRoaster" class="modal-overlay">
+  <app-new-roster (closeModal)="close_onClick($event)" id="form-modal" class="form-modal center-center">
+  </app-new-roster>
+</div>
+
+<div *ngIf="rotaDetail" class="modal-overlay">
+    <app-rota-details (closeModal)="close_onClick($event)" id="form-modal" class="form-modal center-center">
+    </app-rota-details>
+  </div>

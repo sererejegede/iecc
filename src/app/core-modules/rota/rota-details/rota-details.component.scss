@@ -1,0 +1,36 @@
+.top-sec,
+.clt-profile, .btn-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  img {
+    width: 50px;
+    border-radius: 50px;
+  }
+  .asign {
+    margin: 0px 50px 0 15px;
+  }
+}
+
+h6 {
+  font-size: 0.8rem !important;
+  color: #9ea7bb;
+  i {
+    color: #9ea7bb;
+    margin-left: 12px;
+  }
+  i:hover {
+    cursor: pointer;
+    color: black;
+  }
+}
+h5 {
+  font-size: 1rem !important;
+}
+
+.btn-wrap{
+    justify-content: center !important;
+}
+.inner-details{
+    margin: 30px 0 30px 0;
+}
