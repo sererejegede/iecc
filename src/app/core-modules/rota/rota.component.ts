@@ -21,6 +21,7 @@ export class RotaComponent implements OnInit {
 
   ngOnInit() {
     this._pageloaderService.setTitle('Rota')
+    // this.selectedDate = Date.now;
   }
 
   close_onClick(e) {
@@ -37,7 +38,7 @@ export class RotaComponent implements OnInit {
     this.rotaDetail = true;
   }
 
-  onDateChanged() {
-    // this.selectedDate=Date.now;
-  }
+  // onSelect() {
+  
+  // }
 }
