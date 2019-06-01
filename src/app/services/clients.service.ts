@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { IClient } from '../models/client';
-// import { Subject } from 'rxjs/Subject';
 
 
-@Injectable()
-export class CustomersService {
-    private selectedCustomer = new Subject<any>();
-    customerSelected = this.selectedCustomer.asObservable();
+@Injectable({
+    providedIn: 'root'
+})
+export class ClientService {
+
     baseUrl = 'https://roaster-staging.herokuapp.com/api/v1';
+
     constructor(private http: HttpClient) { }
 
     getClients() {

@@ -4,14 +4,14 @@
       <img src="assets/images/IECC Logo.PNG">
     </div>
     <div class="body">
-      <form class="loginForm">
+      <form class="loginForm"  [formGroup]="loginForm">
         <div class="form-input">
           <mat-form-field>
-            <input matInput placeholder="Email Address">
+            <input matInput placeholder="Email Address" formControlName="email">
           </mat-form-field>
           <div class="grd_color"></div>
           <mat-form-field>
-            <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'">
+            <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password">
             <mat-icon style="cursor: pointer;" matSuffix (click)="hide = !hide">
               {{hide ? 'visibility_off' : 'visibility'}}
             </mat-icon>

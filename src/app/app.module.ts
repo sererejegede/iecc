@@ -11,9 +11,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 import { ForgetPasswordComponent } from './auth/forget-password/forget-password.component';
 import { NewPasswordComponent } from './auth/new-password/new-password.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import swal from 'sweetalert2';
+import { UserService } from './services/user.service';
+import { ClientService } from './services/clients.service';
 
 
 @NgModule({
@@ -30,7 +32,7 @@ import swal from 'sweetalert2';
     BrowserAnimationsModule,
     MaterialModule,
     AgmCoreModule,
-    HttpClientModule
+    HttpClientModule, FormsModule, ReactiveFormsModule
     // SweetAlert2Module.forRoot({
     //   buttonsStyling: false,
     //   customClass: 'modal-content',
@@ -38,7 +40,10 @@ import swal from 'sweetalert2';
     //   cancelButtonClass: 'btn'
     // })
   ],
-  providers: [],
+  providers: [
+    UserService,
+    ClientService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

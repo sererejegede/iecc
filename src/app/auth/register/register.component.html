@@ -3,28 +3,32 @@
     <div class="logo">
       <img src="assets/images/IECC Logo.PNG">
     </div>
-    <form class="loginForm">
+    <form class="loginForm" [formGroup]="userForm">
       <div class="form-input">
         <mat-form-field>
-          <input matInput placeholder="Full Name">
+          <input matInput placeholder="First Name" formControlName="firstName">
         </mat-form-field>
         <div class="grd_color"></div>
         <mat-form-field>
-          <input matInput type="email" placeholder="Email Address">
+          <input matInput placeholder="Last Name" formControlName="lastName">
         </mat-form-field>
         <div class="grd_color"></div>
         <mat-form-field>
-          <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'">
+          <input matInput type="email" placeholder="Email Address" formControlName="email">
+        </mat-form-field>
+        <div class="grd_color"></div>
+        <mat-form-field>
+          <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password">
           <mat-icon style="cursor: pointer;" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}
           </mat-icon>
         </mat-form-field>
         <div class="grd_color"></div>
         <mat-form-field>
-          <input matInput type="number" placeholder="Phone Number">
+          <input matInput type="number" placeholder="Phone Number" formControlName="telephoneNumber">
         </mat-form-field>
         <div class="grd_color"></div>
         <mat-form-field>
-          <textarea matInput placeholder="Address"></textarea>
+          <textarea matInput placeholder="Address" formControlName="address"></textarea>
         </mat-form-field>
         <div class="grd_color"></div>
       </div>
