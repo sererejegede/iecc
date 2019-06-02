@@ -9,6 +9,7 @@ import { ClientsComponent } from './clients/clients.component';
 import { RotaComponent } from './rota/rota.component';
 import { ClientDetailsComponent } from './clients/client-details/client-details.component';
 import { PayrollReportComponent } from './payroll-report/payroll-report.component';
+import { TrainingComponent } from './training/training.component';
 
 const COREMODULE_ROUTES: Routes = [
     {
@@ -23,6 +24,7 @@ const COREMODULE_ROUTES: Routes = [
             { path: 'clients', component: ClientsComponent },
             { path: 'client-details', component: ClientDetailsComponent },
             { path: 'rota', component: RotaComponent },
+            { path: 'training', component: TrainingComponent },
             { path: 'reports', component: PayrollReportComponent }
         ]
     }

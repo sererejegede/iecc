@@ -5,3 +5,77 @@
 .grd_color {
   margin-top: -21px;
 }
+
+.line-chart {
+  margin-top: 50px;
+  justify-content: flex-start !important;
+}
+
+.convas_line {
+  height: auto !important;
+  width: auto !important;
+}
+
+.amt {
+  color: #004983 !important;
+  font-weight: 700;
+  font-size: 45px;
+}
+
+.grd_color {
+  height: 5px;
+}
+
+.primary-btn{
+  padding: 11px;
+}
+
+.amount-detail {
+  margin-right: 30px;
+}
+
+.top-chart-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+
+.blue-btn {
+  min-width: 200px !important;
+}
+.space {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.shift-detail {
+  p {
+    min-width: 300px;
+    text-align: justify;
+    border-bottom: 1px solid #ebeff2;
+    font-size: 15px;
+    color: #495268;
+    font-weight: 700;
+    justify-content: space-between;
+    display: flex;
+    span {
+      color: #004983;
+      margin-left: 50px;
+    }
+  }
+}
+
+.bvn{
+  margin-left: 20px;
+}
+.inner-wrap {
+  text-align: center;
+  // padding: 30px;
+  display: block;
+}
+.bottom-query {
+  margin: 0 0 30px 30px;
+  mat-form-field {
+    width: 100%;
+  }
+}

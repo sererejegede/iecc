@@ -1,0 +1,51 @@
+<div class="layout">
+  <div class="card roaster-layout">
+    <div class="roasterDetails">
+
+      <div *ngIf="noTraining" class="notraining">
+        <i class="flaticon-teamwork"></i><br>
+        <a>No training available</a>
+      </div>
+
+      <div *ngIf="traningAvailable">
+        <div class="topAction">
+          <h5>{{selectedDate | date}}</h5>
+        </div>
+        <div class="rotaDetail">
+          <i class="fa fa-plus"></i>
+          <div>
+            <a>Health Care Camp.</a><br>
+            <small>London</small>
+          </div>
+          <div>
+            <div>8:00am - 12:00pm</div>
+          </div>
+        </div>
+        <div class="rotaDetail">
+          <i class="fa fa-plus"></i>
+          <div>
+            <a>Health Care Camp.</a><br>
+            <small>London</small>
+          </div>
+          <div>
+            <div>8:00am - 12:00pm</div>
+          </div>
+        </div>
+        <div class="rotaDetail">
+          <i class="fa fa-plus"></i>
+          <div>
+            <a>Health Care Camp.</a><br>
+            <small>London</small>
+          </div>
+          <div>
+            <div>8:00am - 12:00pm</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="calendarView">
+      <mat-calendar #calendar [selected]="selectedDate" (selectedChange)="onSelect($event)"></mat-calendar>
+    </div>
+  </div>
+</div>
