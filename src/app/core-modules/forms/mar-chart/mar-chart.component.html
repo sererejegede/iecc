@@ -1,0 +1,67 @@
+<div class="layout">
+  <div class="card roaster-layout">
+    <div class="roasterDetails">
+      <div class="topAction">
+        <h5>{{selectedDate | date}}</h5>
+        <div (click)="onShowNewMed()" class="blue-btn"><i class="fa fa-plus"></i>New Medication</div>
+      </div>
+      <div class="selClient">
+        <h6>Select Client: </h6>
+        <div>
+          <select>
+            <option value="0">Olaolu Hammed</option>
+            <option value="1">Folorunsho Yedenu</option>
+            <option value="2">Alao Kemi </option>
+          </select>
+        </div>
+      </div>
+      <div class="rotaDetail">
+        <div>
+          <a>Blister Pack</a><br>
+          <div class="med">
+            <a class="orange-med">AM</a>
+            <a class="blue-med">LT</a>
+            <a class="pink-med">TT</a>
+            <a class="green-med">BT</a>
+          </div>
+        </div>
+        <div class="actions">
+          <i (click)="onEditNewMed()" class="fa fa-edit"></i>
+          <i class="fa fa-trash-alt"></i>
+        </div>
+      </div>
+      <div class="rotaDetail">
+        <div>
+          <a>Tamsulosin (400mg Caps)</a><br>
+          <div class="med">
+            <a class="orange-med">AM</a>
+          </div>
+        </div>
+        <div class="actions">
+          <i (click)="onEditNewMed()" class="fa fa-edit"></i>
+          <i class="fa fa-trash-alt"></i>
+        </div>
+      </div>
+
+    </div>
+    <div class="calendarView">
+      <mat-calendar #calendar [(selected)]="selectedDate"></mat-calendar>
+    </div>
+  </div>
+</div>
+
+
+<div class="floating-button" data-toggle="tooltip" (click)="onHome()" data-placement="top" title="Home">
+  <i class="fa fa-home" aria-hidden="true"></i>
+</div>
+
+
+<div *ngIf="newMedPopup" class="modal-overlay">
+  <app-new-medication (closeModal)="close_onClick($event)" id="form-modal" class="form-modal center-center">
+  </app-new-medication>
+</div>
+
+<div *ngIf="editMedPopup" class="modal-overlay">
+  <app-edit-medication (closeModal)="close_onClick($event)" id="form-modal" class="form-modal center-center">
+  </app-edit-medication>
+</div>

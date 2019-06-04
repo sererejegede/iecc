@@ -13,10 +13,10 @@ export class TrainingComponent implements OnInit {
 
   noTraining = false;
   traningAvailable = false
-  selectedDate: any;
+  // selectedDate: any;
 
   @ViewChild('calendar') calendar: MatCalendar<Moment>;
-  // selectedDate: Moment;
+  selectedDate: Moment;
 
   constructor(private _pageloaderService: pageloaderService) { }
 
@@ -26,14 +26,14 @@ export class TrainingComponent implements OnInit {
       this.noTraining = true;
     } else {
       this.traningAvailable = true;
-      this.onSelect(event);
+      // this.onSelect(event);
     }
   }
 
 
-  onSelect(event) {
-    console.log(event);
-    this.selectedDate = event;
-  }
+  // onSelect(event) {
+  //   console.log(event);
+  //   this.selectedDate = event;
+  // }
 
 }

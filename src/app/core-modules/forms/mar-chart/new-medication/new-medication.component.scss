@@ -1,0 +1,27 @@
+@import "../../../rota/new-roster/new-roster.component.scss";
+
+mat-slide-toggle {
+  margin-left: 50px;
+}
+
+.toogle-med {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+}
+
+.inner-det {
+  h6 {
+    text-align: start;
+  }
+  margin: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

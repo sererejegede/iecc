@@ -1,0 +1,65 @@
+<div class="layout">
+  <div class="card">
+    <div class="ttl">
+      <h5>Record Details</h5>
+      <div (click)="onShowNewABC()" class="blue-btn"><i class="fa fa-plus"></i>New Observation Record</div>
+    </div>
+    <div class="selClient col-sm-4">
+      <h6>Select Client: </h6>
+      <div>
+        <select>
+          <option value="0">Olaolu Hammed</option>
+          <option value="1">Folorunsho Yedenu</option>
+          <option value="2">Alao Kemi </option>
+        </select>
+      </div>
+    </div>
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Time In</th>
+          <th scope="col">Observation Record</th>
+          <th scope="col" style="width: 200px;">Time Out</th>
+          <th scope="col" style="width: 200px;">Staff Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="t-bdy">
+          <td>29/05/2019</td>
+          <td>12:00pm</td>
+          <td>She is currently living with
+            her Husband Alan who
+            provides care for her howeve
+            r is struggling due to her
+            deteriorating with
+            transferring. Pam is living
+            downstairs and does have a </td>
+          <td>4:00pm</td>
+          <td>
+            <div class="name-act">
+              <a>Prabu Bhaskar</a>
+              <div class="actions">
+                <i class="fa fa-edit"></i>
+                <i class="fa fa-trash-alt"></i>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+<div class="floating-button" data-toggle="tooltip" (click)="onHome()" data-placement="top" title="Home">
+  <i class="fa fa-home" aria-hidden="true"></i>
+</div>
+
+
+<div *ngIf="newObsRecord" class="modal-overlay">
+  <app-new-observation-chart (closeModal)="close_onClick($event)" id="form-modal" class="form-modal center-center">
+  </app-new-observation-chart>
+</div>

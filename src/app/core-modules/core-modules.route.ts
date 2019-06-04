@@ -25,7 +25,11 @@ const COREMODULE_ROUTES: Routes = [
             { path: 'client-details', component: ClientDetailsComponent },
             { path: 'rota', component: RotaComponent },
             { path: 'training', component: TrainingComponent },
-            { path: 'reports', component: PayrollReportComponent }
+            { path: 'reports', component: PayrollReportComponent },
+            {
+                path: 'forms',
+                loadChildren: './forms/forms.module#FormModule'
+              }
         ]
     }
 ];

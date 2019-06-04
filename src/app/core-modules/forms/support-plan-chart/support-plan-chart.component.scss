@@ -1,0 +1,27 @@
+@import "../abc-chart/abc-chart.component.scss";
+
+.sup-inner-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .divider {
+    border-right: 2px solid rgba(158, 167, 187, 0.3);
+  }
+}
+
+
+.PD-detail {
+    p {
+      min-width: 300px;
+      text-align: justify;
+      font-size: 15px;
+      color: #495268;
+      font-weight: 500;
+      justify-content: space-between;
+      display: flex;
+      span {
+        // color: #004983;
+        margin-left: 50px;
+      }
+    }
+  }

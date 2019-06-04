@@ -1,0 +1,72 @@
+<div class="animated pulse">
+  <div class="modal-header-wrap">
+    <div (click)="close_onClick()" class="modal-close-ico" aria-hidden="true">X</div>
+  </div>
+  <div class="modal-baseWrap">
+    <br>
+    <form>
+      <div class="input-group">
+        <div class="input-group-wrap">
+          <div class="InputGroup">
+            <mat-form-field>
+              <input matInput [matDatepicker]="dob" placeholder="Date of Birth">
+              <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
+              <mat-datepicker #dob></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="grd_color"></div>
+        </div>
+
+        <div class="input-group-wrap">
+          <div class="InputGroup">
+            <mat-form-field>
+              <input matInput type="time" placeholder="Time">
+            </mat-form-field>
+          </div>
+          <div class="grd_color"></div>
+        </div>
+      </div>
+
+
+      <div class="input-group-wrap">
+        <div class="InputGroup">
+          <mat-form-field style="width: 100%;">
+            <textarea matInput placeholder="Activity"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="grd_color"></div>
+      </div>
+
+      <div class="input-group-wrap">
+        <div class="InputGroup">
+          <mat-form-field style="width: 100%;">
+            <textarea matInput placeholder="Antecedent"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="grd_color"></div>
+      </div>
+
+      <div class="input-group-wrap">
+        <div class="InputGroup">
+          <mat-form-field style="width: 100%;">
+            <textarea matInput placeholder="Behavior"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="grd_color"></div>
+      </div>
+
+      <div class="input-group-wrap">
+        <div class="InputGroup">
+          <mat-form-field style="width: 100%;">
+            <textarea matInput placeholder="Consequence"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="grd_color"></div>
+      </div>
+    </form>
+
+    <div class="btn-wrap">
+      <div class="primary-btn">Submit</div>
+    </div>
+  </div>
+</div>
