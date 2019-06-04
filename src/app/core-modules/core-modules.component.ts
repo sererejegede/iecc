@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./core-modules.component.scss']
 })
 export class CoreModulesComponent implements OnInit {
- title: String;
+  title: String;
 
   open = true;
   close = false;
@@ -17,10 +17,14 @@ export class CoreModulesComponent implements OnInit {
   constructor(
     private _pageloaderService: pageloaderService,
     private router: Router
-  ) { }
+  ) {
+    this._pageloaderService.getTitle().subscribe(appTitle => {
+      this.title = appTitle;
+    });
+  }
 
   ngOnInit() {
-    this._pageloaderService.getTitle().subscribe(appTitle => this.title = appTitle);
+
   }
 
 
@@ -41,18 +45,18 @@ export class CoreModulesComponent implements OnInit {
     this.close = false;
   }
 
-  onShowProfile(){
-    this.router.navigate([ '/core-module/profile' ]);
+  onShowProfile() {
+    this.router.navigate(['/core-module/profile']);
   }
 
-  onShowNotification(){
-    this.router.navigate([ '/core-module/notification' ]);
+  onShowNotification() {
+    this.router.navigate(['/core-module/notification']);
   }
-  onRequest(){
-    this.router.navigate([ '/core-module/request' ]);
+  onRequest() {
+    this.router.navigate(['/core-module/request']);
   }
 
-  onLogout(){
-    this.router.navigate([ '/login' ]);
+  onLogout() {
+    this.router.navigate(['/login']);
   }
 }

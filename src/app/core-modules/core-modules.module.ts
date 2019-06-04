@@ -20,10 +20,11 @@ import { RotaDetailsComponent } from './rota/rota-details/rota-details.component
 import { NewClientComponent } from './clients/new-client/new-client.component';
 import { ClientDetailsComponent } from './clients/client-details/client-details.component';
 import { PayrollReportComponent } from './payroll-report/payroll-report.component';
+import { TrainingComponent } from './training/training.component';
 
 
 @NgModule({
-    declarations: [CoreModulesComponent, DashboardComponent, ProfileComponent, NotificationComponent, StaffTrackingComponent, RequestComponent, NewRequestComponent, ClientsComponent, RotaComponent, NewRosterComponent, RotaDetailsComponent, NewClientComponent, ClientDetailsComponent, PayrollReportComponent],
+    declarations: [CoreModulesComponent, DashboardComponent, ProfileComponent, NotificationComponent, StaffTrackingComponent, RequestComponent, NewRequestComponent, ClientsComponent, RotaComponent, NewRosterComponent, RotaDetailsComponent, NewClientComponent, ClientDetailsComponent, PayrollReportComponent, TrainingComponent],
     imports: [CommonModule, CoreModuleRoute, FullCalendarModule, MaterialModule, HttpClientModule,
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyChkzU73DZa-DM-JfpmEO1k4PCW8xX98c4'

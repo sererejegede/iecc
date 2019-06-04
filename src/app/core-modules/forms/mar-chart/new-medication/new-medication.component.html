@@ -1,0 +1,37 @@
+<div class="animated pulse">
+  <div class="modal-header-wrap">
+    <div (click)="close_onClick()" class="modal-close-ico" aria-hidden="true">X</div>
+  </div>
+  <div class="modal-baseWrap">
+    <br>
+    <form>
+      <div class="input-group">
+        <div class="input-group-wrap">
+          <div class="InputGroup">
+            <mat-form-field>
+              <input matInput placeholder="Medication Name">
+            </mat-form-field>
+          </div>
+          <div class="grd_color"></div>
+        </div>
+      </div>
+      <div class="inner-det">
+        <h6>Dossage:</h6>
+        <div class="col-sm-10">
+          <div class="toogle-med">AM: <mat-slide-toggle>ON</mat-slide-toggle>
+          </div>
+          <div class="toogle-med">LT: <mat-slide-toggle>ON</mat-slide-toggle>
+          </div>
+          <div class="toogle-med">TT: <mat-slide-toggle>ON</mat-slide-toggle>
+          </div>
+          <div class="toogle-med">BT: <mat-slide-toggle>ON</mat-slide-toggle>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="btn-wrap">
+      <div class="primary-btn">Submit</div>
+    </div>
+  </div>
+</div>

@@ -241,6 +241,15 @@ select {
   height: 15px;
   border-radius: 50px;
   padding: 5px;
+  text-align: center;
+}
+.noti-color-blue2 {
+  background: #97e6ff;
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  padding: 5px;
+  text-align: center;
 }
 .noti-color-green {
   background: #50b748;
@@ -248,6 +257,15 @@ select {
   height: 15px;
   border-radius: 50px;
   padding: 5px;
+  text-align: center;
+}
+.noti-color-pink {
+  background: #ffabab;
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  padding: 5px;
+  text-align: center;
 }
 
 .noti-color-orange {
@@ -256,6 +274,7 @@ select {
   height: 15px;
   border-radius: 50px;
   padding: 5px;
+  text-align: center;
 }
 
 .blue {
@@ -371,4 +390,112 @@ select {
     font-size: 12px;
     font-weight: 600;
   }
+}
+
+.roaster-layout {
+  display: grid;
+  grid-template-columns: 35% Auto;
+}
+
+.roasterDetails {
+  padding: 40px;
+  .topAction,
+  .rotaDetail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ebeff2;
+    padding: 12px;
+  }
+
+  .rotaDetail:hover {
+    background: #35a3cb;
+    cursor: pointer;
+    color: #ebeff2 !important;
+    .noti-color-green {
+      border: 1px solid white;
+    }
+    span {
+      color: white !important;
+    }
+  }
+}
+.calendarView {
+  display: flex;
+  justify-content: center;
+  background: rgba(196, 196, 196, 0.24);
+  padding: 30px;
+  mat-calendar {
+    width: 500px !important;
+    mat-calendar-header {
+      button {
+        span {
+          font-size: 25px !important;
+        }
+      }
+    }
+  }
+}
+
+.floating-button {
+  z-index: 3;
+  width: 55px;
+  height: 55px;
+  border-radius: 100%;
+  background: #004983;
+  position: fixed;
+  text-align: center;
+  bottom: 70px;
+  align-content: center;
+  right: 50px;
+  cursor: pointer;
+  // border: 4px solid #fff;
+  // box-shadow: 1px 1px 5px 8px rgba(93, 57, 48, 0.812);
+  -webkit-animation: glow 3000ms ease-in-out infinite alternate;
+  -moz-animation: glow 3000ms ease-in-out infinite alternate;
+  animation: glow 3000ms ease-in-out infinite alternate;
+  i {
+    position: absolute;
+    top: auto;
+    display: block;
+    bottom: 0;
+    text-align: center;
+    padding: 0;
+    margin: 0 !important;
+    font-size: 20px;
+    line-height: 55px;
+    font-weight: 700;
+    -webkit-animation: plus-out 0.3s;
+    animation: plus-out 0.3s;
+    transition: all 0.3s;
+    color: white;
+    left: 30%;
+  }
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 -10px rgba(9, 1, 126, 0.475);
+    }
+    20% {
+      box-shadow: 0 0 -5px #5d18ff;
+    }
+    40% {
+      box-shadow: 0 0 40px rgba(102, 85, 255, 0.315);
+    }
+    60% {
+      box-shadow: 0 0 50px #6635ff;
+    }
+    80% {
+      box-shadow: 0 0 30px #6655ff;
+    }
+    100% {
+      box-shadow: 0 0 -10px #217bca;
+    }
+  }
+}
+
+
+.table .thead-dark th {
+  color: #fff;
+  background-color: #495268 !important;
+  border-color: #454d55;
 }

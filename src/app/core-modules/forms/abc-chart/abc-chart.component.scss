@@ -1,0 +1,30 @@
+.card {
+  padding: 30px;
+}
+
+@import "../mar-chart/mar-chart.component.scss";
+
+.selClient {
+  border-bottom: none !important;
+}
+
+.ttl,
+.name-act {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.t-bdy{
+    color: #495268;
+}
+
+
+.t-bdy:hover {
+  background: rgba(221, 221, 221, 0.336);
+  .actions {
+    display: grid;
+    i {
+      color: #495268;
+    }
+  }
+}

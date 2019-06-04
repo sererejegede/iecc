@@ -10,22 +10,40 @@
     </div>
     <br>
     <div class="gph_detail col-sm-12">
-      <div class="gph col-sm-7">
+      <div class="gph col-sm-6">
         <div class="line-chart">
-          <canvas class="convas_line" id="lineChart" chart-colors="colors"></canvas>
+          <canvas id="lineChart" chart-colors="colors"></canvas>
         </div>
       </div>
-      <div class="cl">
-        <div>
-
+      <div class="inner-wrap">
+        <div class="top-chart-detail">
+          <div class="amount-detail">
+            <h5>Total Pay</h5>
+            <div class="space"></div>
+            <a class="amt">$2400</a>
+            <div class="space"></div>
+            <div class="blue-btn">View Payslip</div>
+          </div>
+          <div class="shift-detail">
+            <p>Overtime shifts <span>10</span></p>
+            <p>Scheduled shifts <span>40</span></p>
+            <p>Time Spent <span>200 hours</span></p>
+            <p>Overtime Rates <span>$2 per hour</span></p>
+            <p>Shift Rates <span>$5 per hour</span></p>
+            <p>Cancelled Shifts <span>5</span></p>
+          </div>
         </div>
 
-        <div class="InputGroup">
-          <mat-form-field style="width: 100%;">
-            <textarea matInput placeholder="Address"></textarea>
-          </mat-form-field>
+        <div class="bottom-query">
+          <div class="bvn">
+            <mat-form-field>
+              <textarea matInput placeholder="Query Payslip"></textarea>
+            </mat-form-field>
+            <div class="grd_color"></div>
+          </div>
+
+          <div class="primary-btn">Submit</div>
         </div>
-        <div class="grd_color"></div>
       </div>
     </div>
 
