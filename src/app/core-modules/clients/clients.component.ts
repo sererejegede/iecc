@@ -17,36 +17,27 @@ export class ClientsComponent implements OnInit {
   selectedClient: Client;
 
   constructor(private _pageloaderService: pageloaderService,
-    private router: Router, private _clientService: ClientService, private _broadCastSelectedUser: BroadCastSelectedUserService) {
-    this._broadCastSelectedUser.reloadAnnouncedSource$.subscribe(() => {
-      this.getClients();
-    });
-  }
+    private router: Router, private _clientService: ClientService, private _broadCastSelectedUser: BroadCastSelectedUserService) { }
 
   ngOnInit() {
-    this._pageloaderService.setTitle('Clients')
-    this._clientService.refreshNeeded$.subscribe(() => {
-      this.getClients();
-    });
+    this._pageloaderService.setTitle('Clients');
     this.getClients();
   }
 
 
   getClients() {
     this._clientService.getClients().subscribe(
-      (payload: Client[]) => {
+      (payload : any) => {
         this.clients = payload.data;
       },
       (error) => { }
     );
   }
 
-  announceClient(this, client) {
-    this._broadCastSelectedUser.announceUserSelectedOperation(client);
-  }
-
-  onSelectedClient(client: Client) {
+  onSelectedClient(client) {
     this.selectedClient = client;
+    console.log(this.selectedClient);
+    this.router.navigate(['/core-module/client-details', client._id ]);
   }
 
   close_onClick(e) {

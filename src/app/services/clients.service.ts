@@ -21,7 +21,7 @@ export class ClientService {
     }
 
     getClients() {
-        return this.http.get(this.baseUrl + "/client/all");
+        return this.http.get<Client>(`${this.baseUrl + "/client/all"}`);
     }
 
     postClients(client) {

@@ -4,6 +4,7 @@ import { ISocialWorkDetails } from './socialWorkDetail';
 
 
 export class Client {
+    public id : string;
     public name: string;
     public email: string;
     public password: string;
@@ -16,8 +17,10 @@ export class Client {
     public nhsNumber: string;
     public nextOfKin: IUserNOK;
     public socialWorkerDetail: ISocialWorkDetails;
+  
 
     constructor(
+        _id: string,
         _name: string,
         _email: string,
         _password: string,
@@ -31,6 +34,7 @@ export class Client {
         _nextOfKin: IUserNOK,
         _socialWorkerDetail: ISocialWorkDetails
     ) {
+        this.id = _id;
         this.name = _name;
         this.email = _email;
         this.password = _password;

@@ -22,7 +22,7 @@ const COREMODULE_ROUTES: Routes = [
             { path: 'staff-tracking', component: StaffTrackingComponent },
             { path: 'request', component: RequestComponent },
             { path: 'clients', component: ClientsComponent },
-            { path: 'client-details', component: ClientDetailsComponent },
+            { path: 'client-details/:id', component: ClientDetailsComponent },
             { path: 'rota', component: RotaComponent },
             { path: 'training', component: TrainingComponent },
             { path: 'reports', component: PayrollReportComponent },
