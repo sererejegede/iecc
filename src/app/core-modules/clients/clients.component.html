@@ -4,80 +4,49 @@
       <h4>Client List</h4>
       <div (click)="onShowNewClient()" class="blue-btn"><i class="fa fa-plus"></i>New Client</div>
     </div>
+
+    <!-- <table id="data-table" class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Full Name</th>
+          <th>Telephone</th>
+          <th>E-Mail</th>
+          <th>Address</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let client of clientLoad">
+          <td>
+          </td>
+          <td>{{client.name}}</td>
+          <td>{{client.telephoneNumber}}</td>
+          <td> {{client.email}}</td>
+          <td>{{client.address}}</td>
+          <td>{{client.description}}</td>
+          <td>
+            <div class="action-right">
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table> -->
+
     <div class="row">
-      <div class="col-sm-3 client-card">
+      <div class="col-sm-3 client-card" *ngFor="let client of clients">
         <div class="edit-wrap">
-          <h6 (click)="onShowDetail()">Mercy Daracan</h6>
+          <h6 (click)="onSelectedClient(client)">{{client.name}}</h6>
           <i (click)="onShowNewClient()" class="fa fa-edit"></i>
         </div>
-        <p>22, Beacon Lodge 2 Gladstone Road,
-          Colchester, Essex, CO1 2EB</p>
-        <a>Personal care plan</a>
-      </div>
-      <div class="col-sm-3 client-card">
-        <div class="edit-wrap">
-          <h6 (click)="onShowDetail()">Mercy Daracan</h6>
-          <i (click)="onShowNewClient()" class="fa fa-edit"></i>
-        </div>
-        <p>22, Beacon Lodge 2 Gladstone Road,
-          Colchester, Essex, CO1 2EB</p>
-        <a>Personal care plan</a>
-      </div>
-      <div class="col-sm-3 client-card">
-        <div class="edit-wrap">
-          <h6 (click)="onShowDetail()">Mercy Daracan</h6>
-          <i (click)="onShowNewClient()" class="fa fa-edit"></i>
-        </div>
-        <p>22, Beacon Lodge 2 Gladstone Road,
-          Colchester, Essex, CO1 2EB</p>
-        <a>Personal care plan</a>
-      </div>
-      <div class="col-sm-3 client-card">
-        <div class="edit-wrap">
-          <h6 (click)="onShowDetail()">Mercy Daracan</h6>
-          <i (click)="onShowNewClient()" class="fa fa-edit"></i>
-        </div>
-        <p>22, Beacon Lodge 2 Gladstone Road,
-          Colchester, Essex, CO1 2EB</p>
-        <a>Personal care plan</a>
-      </div>
-      <div class="col-sm-3 client-card">
-        <div class="edit-wrap">
-          <h6>Mercy Daracan</h6>
-          <i class="fa fa-edit"></i>
-        </div>
-        <p>22, Beacon Lodge 2 Gladstone Road,
-          Colchester, Essex, CO1 2EB</p>
-        <a>Personal care plan</a>
-      </div>
-      <div class="col-sm-3 client-card">
-        <div class="edit-wrap">
-          <h6>Mercy Daracan</h6>
-          <i class="fa fa-edit"></i>
-        </div>
-        <p>22, Beacon Lodge 2 Gladstone Road,
-          Colchester, Essex, CO1 2EB</p>
-        <a>Personal care plan</a>
-      </div>
-      <div class="col-sm-3 client-card">
-        <div class="edit-wrap">
-          <h6>Mercy Daracan</h6>
-          <i class="fa fa-edit"></i>
-        </div>
-        <p>22, Beacon Lodge 2 Gladstone Road,
-          Colchester, Essex, CO1 2EB</p>
-        <a>Personal care plan</a>
-      </div>
-      <div class="col-sm-3 client-card">
-        <div class="edit-wrap">
-          <h6>Mercy Daracan</h6>
-          <i class="fa fa-edit"></i>
-        </div>
-        <p>22, Beacon Lodge 2 Gladstone Road,
-          Colchester, Essex, CO1 2EB</p>
-        <a>Personal care plan</a>
+        <p>{{client.telephoneNumber}}</p>
+        <p>{{client.address}}</p>
+        <p>{{client.email}}</p>
+        <a>{{client.description}}</a>
       </div>
     </div>
+
     <div class="blue-btn">Load More</div>
   </div>
 </div>

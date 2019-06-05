@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
-import { IClient } from '../models/client';
+import { Subject, from } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { Client } from '../models/client';
 
 
 @Injectable({
@@ -13,19 +14,27 @@ export class ClientService {
 
     constructor(private http: HttpClient) { }
 
+    private _refreshNeeded$ = new Subject<void>();
+
+    get refreshNeeded$() {
+        return this._refreshNeeded$;
+    }
+
     getClients() {
-        return this.http.get<IClient>(this.baseUrl + "/client/all");
+        return this.http.get<Client>(`${this.baseUrl + "/client/all"}`);
     }
 
     postClients(client) {
-        return this.http.post("https://roaster-staging.herokuapp.com/api/v1/client/save", client);
+        return this.http.post(this.baseUrl + "/client/save", client)
+            .pipe(
+                tap(() => {
+                    this._refreshNeeded$.next();
+                })
+            );
     }
 
     getClient(clientid) {
         return this.http.get(`${this.baseUrl}/client/${clientid}`);
     }
 
-    authLogin(email, password) {
-        return this.http.get(`${this.baseUrl}/${email}/login?password=${password}`);
-    }
 }

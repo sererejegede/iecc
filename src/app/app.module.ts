@@ -12,6 +12,7 @@ import { AgmCoreModule } from '@agm/core';
 import { ForgetPasswordComponent } from './auth/forget-password/forget-password.component';
 import { NewPasswordComponent } from './auth/new-password/new-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {  RxReactiveFormsModule } from "@rxweb/reactive-form-validators"
 
 import swal from 'sweetalert2';
 import { UserService } from './services/user.service';
@@ -32,13 +33,7 @@ import { ClientService } from './services/clients.service';
     BrowserAnimationsModule,
     MaterialModule,
     AgmCoreModule,
-    HttpClientModule, FormsModule, ReactiveFormsModule
-    // SweetAlert2Module.forRoot({
-    //   buttonsStyling: false,
-    //   customClass: 'modal-content',
-    //   confirmButtonClass: 'btn btn-primary',
-    //   cancelButtonClass: 'btn'
-    // })
+    HttpClientModule, FormsModule, ReactiveFormsModule, RxReactiveFormsModule
   ],
   providers: [
     UserService,
