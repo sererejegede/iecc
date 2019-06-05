@@ -21,14 +21,16 @@ import { NewClientComponent } from './clients/new-client/new-client.component';
 import { ClientDetailsComponent } from './clients/client-details/client-details.component';
 import { PayrollReportComponent } from './payroll-report/payroll-report.component';
 import { TrainingComponent } from './training/training.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BroadCastSelectedUserService } from '../services/broadcast-selected-user.service';
 
 
 @NgModule({
     declarations: [CoreModulesComponent, DashboardComponent, ProfileComponent, NotificationComponent, StaffTrackingComponent, RequestComponent, NewRequestComponent, ClientsComponent, RotaComponent, NewRosterComponent, RotaDetailsComponent, NewClientComponent, ClientDetailsComponent, PayrollReportComponent, TrainingComponent],
-    imports: [CommonModule, CoreModuleRoute, FullCalendarModule, MaterialModule, HttpClientModule,
+    imports: [CommonModule, CoreModuleRoute, FullCalendarModule, MaterialModule, HttpClientModule, FormsModule, ReactiveFormsModule,
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyChkzU73DZa-DM-JfpmEO1k4PCW8xX98c4'
         })],
-    providers: [pageloaderService]
+    providers: [pageloaderService, BroadCastSelectedUserService]
 })
 export class CoreModule { }

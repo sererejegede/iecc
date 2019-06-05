@@ -4,37 +4,51 @@
   </div>
   <div class="modal-baseWrap">
     <br>
-    <form>
-      <div class="input-group">
-        <div class="input-group-wrap">
+    <form [formGroup]="clientForm">
+      <div class="input-group" style="width: 100%;">
+        <div class="input-group-wrap" style="width: 100%;">
           <div class="InputGroup">
             <mat-form-field>
-              <mat-label>Client Name</mat-label>
-              <mat-select>
-                <mat-option>Omoyemi Hammed</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-          <div class="grd_color"></div>
-        </div>
-
-        <div class="input-group-wrap">
-          <div class="InputGroup">
-            <mat-form-field>
-              <input matInput [matDatepicker]="dob" placeholder="Date of Birth">
-              <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
-              <mat-datepicker #dob></mat-datepicker>
+              <input matInput type="text" placeholder="Name" formControlName="name">
             </mat-form-field>
           </div>
           <div class="grd_color"></div>
         </div>
       </div>
 
+      <div class="input-group">
+        <div class="input-group-wrap">
+          <div class="InputGroup">
+            <mat-form-field>
+              <input matInput type="email" placeholder="E-Mail" formControlName="email">
+            </mat-form-field>
+          </div>
+          <div class="grd_color"></div>
+        </div>
+
+        <div class="input-group-wrap">
+          <div class="InputGroup">
+            <mat-form-field>
+              <input matInput type="password" placeholder="Password" formControlName="password">
+            </mat-form-field>
+          </div>
+          <div class="grd_color"></div>
+        </div>
+      </div>
 
       <div class="input-group-wrap">
         <div class="InputGroup">
           <mat-form-field style="width: 100%;">
-            <textarea matInput placeholder="Current Address"></textarea>
+            <textarea matInput placeholder="Description" formControlName="description"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="grd_color"></div>
+      </div>
+
+      <div class="input-group-wrap">
+        <div class="InputGroup">
+          <mat-form-field style="width: 100%;">
+            <textarea matInput placeholder="Current Address" formControlName="address"></textarea>
           </mat-form-field>
         </div>
         <div class="grd_color"></div>
@@ -44,7 +58,7 @@
         <div class="input-group-wrap">
           <div class="InputGroup">
             <mat-form-field>
-              <input matInput type="number" placeholder="Telephone">
+              <input matInput type="number" placeholder="Telephone" formControlName="telephoneNumber">
             </mat-form-field>
           </div>
           <div class="grd_color"></div>
@@ -64,7 +78,7 @@
         <div class="input-group-wrap">
           <div class="InputGroup">
             <mat-form-field>
-              <input matInput [matDatepicker]="dia" placeholder="Date of Initial Assessment">
+              <input matInput [matDatepicker]="dia" placeholder="Date of Initial Assessment" formControlName="dateOfInitialAssessment">
               <mat-datepicker-toggle matSuffix [for]="dia"></mat-datepicker-toggle>
               <mat-datepicker #dia></mat-datepicker>
             </mat-form-field>
@@ -75,7 +89,7 @@
         <div class="input-group-wrap">
           <div class="InputGroup">
             <mat-form-field>
-              <input matInput [matDatepicker]="doa" placeholder="Date of Admission">
+              <input matInput [matDatepicker]="doa" placeholder="Date of Admission" formControlName="dateOfAdmission">
               <mat-datepicker-toggle matSuffix [for]="doa"></mat-datepicker-toggle>
               <mat-datepicker #doa></mat-datepicker>
             </mat-form-field>
@@ -88,7 +102,7 @@
         <div class="input-group-wrap">
           <div class="InputGroup">
             <mat-form-field>
-              <input matInput placeholder="Person ID Number">
+              <input matInput placeholder="Person ID Number" formControlName="personIdNumber">
             </mat-form-field>
           </div>
           <div class="grd_color"></div>
@@ -97,7 +111,7 @@
         <div class="input-group-wrap">
           <div class="InputGroup">
             <mat-form-field>
-              <input matInput placeholder="NHIS No.">
+              <input matInput placeholder="NHIS No." formControlName="nhsNumber">
             </mat-form-field>
           </div>
           <div class="grd_color"></div>
@@ -115,7 +129,7 @@
             <div class="input-group-wrap">
               <div class="InputGroup">
                 <mat-form-field>
-                  <input matInput placeholder="Next of Kin">
+                  <input matInput placeholder="Next of Kin" formControlName="NOKname">
                 </mat-form-field>
               </div>
               <div class="grd_color"></div>
@@ -125,7 +139,7 @@
               <div class="InputGroup">
                 <mat-form-field>
                   <mat-label>Relationship</mat-label>
-                  <mat-select>
+                  <mat-select formControlName="relationship">
                     <mat-option value="0">Father</mat-option>
                     <mat-option value="1">Mother</mat-option>
                     <mat-option value="2">Wife</mat-option>
@@ -142,7 +156,7 @@
             <div class="input-group-wrap">
               <div class="InputGroup">
                 <mat-form-field>
-                  <input matInput type="number" placeholder="Telephone No.">
+                  <input matInput type="number" placeholder="Telephone No." formControlName="NOKtelephoneNumber">
                 </mat-form-field>
               </div>
               <div class="grd_color"></div>
@@ -151,7 +165,7 @@
             <div class="input-group-wrap">
               <div class="InputGroup">
                 <mat-form-field>
-                  <input matInput placeholder="Address">
+                  <input matInput placeholder="Address" formControlName="NOKaddress">
                 </mat-form-field>
               </div>
               <div class="grd_color"></div>
@@ -168,7 +182,7 @@
             <div class="input-group-wrap">
               <div class="InputGroup">
                 <mat-form-field>
-                  <input matInput placeholder="Details">
+                  <input matInput placeholder="Name" formControlName="SocialWorkname">
                 </mat-form-field>
               </div>
               <div class="grd_color"></div>
@@ -177,7 +191,7 @@
             <div class="input-group-wrap">
               <div class="InputGroup">
                 <mat-form-field>
-                  <input matInput type="number" placeholder="Telephone No.">
+                  <input matInput type="number" placeholder="Telephone No." formControlName="SocialWorknumber">
                 </mat-form-field>
               </div>
               <div class="grd_color"></div>
@@ -188,7 +202,7 @@
           <div class="input-group-wrap">
             <div class="InputGroup">
               <mat-form-field style="width: 100%;">
-                <textarea matInput placeholder="Address"></textarea>
+                <textarea matInput placeholder="Company Address" formControlName="SocialWorkcompany"></textarea>
               </mat-form-field>
             </div>
             <div class="grd_color"></div>
@@ -200,7 +214,7 @@
     </form>
 
     <div class="btn-wrap">
-      <div class="primary-btn">Submit</div>
+      <div (click)="onSaveClient()" class="primary-btn">Submit</div>
     </div>
   </div>
 </div>
