@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import swal from 'sweetalert2';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
+import { CoolLocalStorage } from 'angular2-cool-storage';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   constructor(private router: Router,
     private _formBuilder: FormBuilder,
+    private _locker: CoolLocalStorage,
     private _userService: UserService) { }
 
   ngOnInit() {
@@ -47,10 +49,12 @@ export class LoginComponent implements OnInit, OnDestroy {
         swal.fire({
           type: 'success',
           title: 'Login Successful',
-          // showConfirmButton: true,
-          // timer: 1500
+          showConfirmButton: true,
+          timer: 1500
         });
         console.log(payload);
+        this._userService.selectUser(payload);
+        this._locker.setObject('selectedUser', payload);
         this.router.navigate(['/core-module']);
       },
       (error) => {

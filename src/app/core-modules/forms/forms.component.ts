@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { style } from '@angular/animations';
 import { Router } from '@angular/router';
+import { pageloaderService } from 'src/app/services/pageloaderService';
 
 @Component({
   selector: 'app-forms',
@@ -11,10 +12,10 @@ export class FormsComponent implements OnInit {
 
   title: String;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private _pageloaderService: pageloaderService) { }
 
   ngOnInit() {
-
+    this._pageloaderService.setTitle('Forms')
   }
 
 }

@@ -11,65 +11,25 @@
     </div>
     <br>
     <hr>
-    <div class="top-cont cont-body">
-      <div class="statusP">
-        <a class="main-req">Request for absence</a>
-        <small>You made a request for leave of absence ...</small>
-      </div>
-      <div class="statusP">
-        <a>May 20th 2019</a>
-        <small>Status: <span class="green">Granted</span></small>
-      </div>
-    </div>
-    <hr>
-    <div class="top-cont cont-body">
-      <div class="statusP">
-        <a class="main-req">Request for absence</a>
-        <small>You made a request for leave of absence ...</small>
-      </div>
-      <div class="statusP">
-        <a>May 20th 2019</a>
-        <small>Status: <span class="green">Granted</span></small>
+    <div *ngFor="let request of requests">
+      <div class="top-cont cont-body">
+        <div class="statusP">
+          <a class="main-req">{{request.requestType}}</a>
+          <small>{{request.reasons}}</small>
+        </div>
+        <div class="">
+          <a>{{request.startDate}}</a>
+          <small>Duration: <span class="green">{{request.duration}}</span></small>
+        </div>
       </div>
     </div>
-    <hr>
-    <div class="top-cont cont-body">
-      <div class="statusP">
-        <a class="main-req">Request for absence</a>
-        <small>You made a request for leave of absence ...</small>
-      </div>
-      <div class="statusP">
-        <a>May 20th 2019</a>
-        <small>Status: <span class="green">Granted</span></small>
-      </div>
-    </div>
-    <hr>
-    <div class="top-cont cont-body">
-      <div class="statusP">
-        <a class="main-req">Request for absence</a>
-        <small>You made a request for leave of absence ...</small>
-      </div>
-      <div class="statusP">
-        <a>May 20th 2019</a>
-        <small>Status: <span class="green">Granted</span></small>
-      </div>
-    </div>
-    <hr>
-    <div class="top-cont cont-body">
-      <div class="statusP">
-        <a class="main-req">Request for absence</a>
-        <small>You made a request for leave of absence ...</small>
-      </div>
-      <div class="statusP">
-        <a>May 20th 2019</a>
-        <small>Status: <span class="green">Granted</span></small>
-      </div>
-    </div>
+
     <hr>
     <div class="blue-btn">Load More</div>
   </div>
 </div>
 
 <div *ngIf="newRequest" class="modal-overlay">
-    <app-new-request (closeModal)="close_onClick($event)" id="form-modal" class="form-modal center-center"></app-new-request>
+  <app-new-request (closeModal)="close_onClick($event)" id="form-modal" class="form-modal center-center">
+  </app-new-request>
 </div>

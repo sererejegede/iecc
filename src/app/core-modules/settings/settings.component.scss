@@ -1,0 +1,56 @@
+.card {
+  padding: 70px;
+}
+
+.profile-pic {
+  background: rgba(53, 163, 203, 0.05);
+  border-radius: 3px;
+}
+
+.prof-session {
+  background: rgba(53, 163, 203, 0.05);
+  border-radius: 3px;
+  padding: 25px;  
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  .prof-name {
+    margin-bottom: 20px;
+  }
+  .profile-picture {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    img {
+      width: 100px;
+      border-radius: 40%;
+    }
+  }
+}
+
+.nav-session {
+  margin-top: 20px;
+  .nav-item {
+    background: rgba(53, 163, 203, 0.05);
+    border-radius: 3px;
+    padding: 20px;
+    color: #4f4f4f;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    margin-bottom: 15px;
+    i {
+      margin-right: 30px;
+    }
+  }
+
+  .active,
+  .nav-item:hover {
+    cursor: pointer;
+    border-left: 5px solid #35a3cb;
+    box-shadow: 0px 3px 2px 0px #868686;
+  }
+}

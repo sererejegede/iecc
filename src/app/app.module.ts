@@ -17,6 +17,9 @@ import {  RxReactiveFormsModule } from "@rxweb/reactive-form-validators"
 import swal from 'sweetalert2';
 import { UserService } from './services/user.service';
 import { ClientService } from './services/clients.service';
+import { RoasterService } from './services/roaster.service';
+import { CoolStorageModule } from 'angular2-cool-storage';
+import { RequestService } from './services/request.service';
 
 
 @NgModule({
@@ -33,11 +36,14 @@ import { ClientService } from './services/clients.service';
     BrowserAnimationsModule,
     MaterialModule,
     AgmCoreModule,
+		CoolStorageModule,
     HttpClientModule, FormsModule, ReactiveFormsModule, RxReactiveFormsModule
   ],
   providers: [
     UserService,
-    ClientService
+    ClientService, 
+    RoasterService,
+    RequestService
   ],
   bootstrap: [AppComponent]
 })

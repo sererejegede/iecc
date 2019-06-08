@@ -4,14 +4,15 @@
   </div>
   <div class="modal-baseWrap">
     <br>
-    <form>
+    <form [formGroup]="roasterForm">
       <div class="input-group">
         <div class="input-group-wrap">
           <div class="InputGroup">
             <mat-form-field>
               <mat-label>Client</mat-label>
-              <mat-select>
-                <mat-option>Omoyemi Hammed</mat-option>
+              <mat-select formControlName="selectedClientId">
+                <mat-option *ngFor="let client of clients" [value]="client._id">
+                  {{client.name}}</mat-option>
               </mat-select>
             </mat-form-field>
           </div>
@@ -21,55 +22,57 @@
         <div class="input-group-wrap">
           <div class="InputGroup">
             <mat-form-field>
-              <input matInput [matDatepicker]="picker" placeholder="Date">
+              <input matInput type="time" placeholder="Time In" formControlName="starts">
+            </mat-form-field>
+          </div>
+          <div class="grd_color"></div>
+        </div>
+
+        <!-- <div class="input-group-wrap">
+          <div class="InputGroup">
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker" placeholder="Date" >
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
           </div>
           <div class="grd_color"></div>
-        </div>
+        </div> -->
       </div>
 
       <div class="input-group">
         <div class="input-group-wrap">
           <div class="InputGroup">
             <mat-form-field>
-              <input matInput type="time" placeholder="Time In">
+              <input matInput type="time" placeholder="Time Out" formControlName="ends">
             </mat-form-field>
           </div>
           <div class="grd_color"></div>
         </div>
 
-        <div class="input-group-wrap">
-          <div class="InputGroup">
-            <mat-form-field>
-              <input matInput type="time" placeholder="Time Out">
-            </mat-form-field>
-          </div>
-          <div class="grd_color"></div>
-        </div>
-      </div>
-
-      <div class="input-group">
         <div class="input-group-wrap">
           <div class="InputGroup">
             <mat-form-field>
               <mat-label>Assignee</mat-label>
-              <mat-select>
-                <mat-option>Grace Udor</mat-option>
+              <mat-select formControlName="selectedUserId">
+                <mat-option *ngFor="let user of users" [value]="user._id">{{user.name}}
+                </mat-option>
               </mat-select>
             </mat-form-field>
           </div>
           <div class="grd_color"></div>
         </div>
+      </div>
+
+      <div class="input-group">
         <div class="input-group-wrap">
           <div class="InputGroup">
             <mat-form-field>
               <mat-label>Status</mat-label>
-              <mat-select>
+              <mat-select formControlName="status">
                 <mat-option value="0">Pending</mat-option>
                 <mat-option value="1">Ongoing</mat-option>
-                <mat-option value="2">Completed</mat-option>
+                <mat-option value="3">Completed</mat-option>
               </mat-select>
             </mat-form-field>
           </div>
@@ -79,7 +82,7 @@
     </form>
 
     <div class="btn-wrap">
-      <div class="primary-btn">Submit</div>
+      <div (click)="onSaveRoaster()" class="primary-btn">Submit</div>
     </div>
   </div>
 </div>

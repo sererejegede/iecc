@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { IRoaster } from '../models/roaster';
+import { Roaster } from '../models/roaster';
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +18,18 @@ export class RoasterService {
   }
 
   getRoaster(userId) {
-    return this.http.get<IRoaster>(this.baseUrl + "/roaster/", userId);
+    return this.http.get<Roaster>(this.baseUrl + "/roaster/", userId);
   }
 
-  updateRoaster(roasterId){
+  getRoasterByDate(date) {
+    return this.http.get<Roaster>(this.baseUrl + "/roaster/shift/start/date", date);
+  }
+
+  updateRoasterCompleted(roasterId){
     return this.http.put(this.baseUrl + "/roaster/update/completed/", roasterId)
+  }
+
+  updateRoasterOngoing(roasterId){
+    return this.http.put(this.baseUrl + "/roaster/update/ongoing/", roasterId)
   }
 }

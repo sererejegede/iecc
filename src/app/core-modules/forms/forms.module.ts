@@ -18,7 +18,7 @@ import { SupportPlanChartComponent } from './support-plan-chart/support-plan-cha
 @NgModule({
     declarations:[FormsComponent, FormListComponent, MarChartComponent, NewMedicationComponent, EditMedicationComponent, AbcChartComponent, NewAbcRecordComponent, ObservationChartComponent, NewObservationChartComponent, SupportPlanChartComponent],
     imports: [CommonModule, FormModuleRoute, FullCalendarModule, MaterialModule],
-    providers: [pageloaderService]
+    providers: []
 })
 
 export class FormModule {}

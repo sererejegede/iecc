@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { style } from '@angular/animations';
 import { pageloaderService } from '../services/pageloaderService';
 import { Router } from '@angular/router';
+import { CoolLocalStorage } from 'angular2-cool-storage';
 
 @Component({
   selector: 'app-core-modules',
@@ -11,10 +12,13 @@ import { Router } from '@angular/router';
 export class CoreModulesComponent implements OnInit {
   title: String;
 
+  user;
+
   open = true;
   close = false;
 
   constructor(
+    private _locker: CoolLocalStorage,
     private _pageloaderService: pageloaderService,
     private router: Router
   ) {
@@ -24,7 +28,8 @@ export class CoreModulesComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.user = this._locker.getObject('selectedUser');
+    console.log(this.user);
   }
 
 
@@ -45,9 +50,9 @@ export class CoreModulesComponent implements OnInit {
     this.close = false;
   }
 
-  onShowProfile() {
-    this.router.navigate(['/core-module/profile']);
-  }
+  // onShowProfile() {
+  //   this.router.navigate(['/core-module/profile']);
+  // }
 
   onShowNotification() {
     this.router.navigate(['/core-module/notification']);
