@@ -4,20 +4,17 @@
   </div>
   <div class="modal-baseWrap">
     <br>
-    <form>
+    <form [formGroup]="requestForm">
       <div class="input-group">
         <div class="InputGroup">
           <mat-form-field>
-            <mat-label>Request Type</mat-label>
-            <mat-select>
-              <mat-option>Leave of Absence</mat-option>
-            </mat-select>
+            <input matInput placeholder="Request Type" formControlName="requestType">
           </mat-form-field>
           <div class="grd_color"></div>
         </div>
         <div class="InputGroup">
           <mat-form-field>
-            <input matInput type="date" placeholder="Start Date">
+            <input matInput type="date" placeholder="Start Date" formControlName="startDate">
           </mat-form-field>
           <div class="grd_color"></div>
         </div>
@@ -25,13 +22,13 @@
       <div class="input-group">
         <div class="InputGroup">
           <mat-form-field>
-            <input matInput type="time" placeholder="Start Time">
+            <input matInput type="time" placeholder="Start Time" formControlName="startTime">
           </mat-form-field>
           <div class="grd_color"></div>
         </div>
         <div class="InputGroup">
           <mat-form-field>
-            <input matInput placeholder="Duration">
+            <input matInput placeholder="Duration" formControlName="duration">
           </mat-form-field>
           <div class="grd_color"></div>
         </div>
@@ -39,11 +36,14 @@
       <div class="input-group">
         <div class="InputGroup-xtr">
           <mat-form-field>
-            <input matInput placeholder="Reasons">
+            <input matInput placeholder="Reasons" formControlName="reasons">
           </mat-form-field>
           <div class="grd_color"></div>
         </div>
       </div>
     </form>
+    <div class="btn-wrap">
+      <div (click)="onSaveRequest()" class="primary-btn">Submit</div>
+    </div>
   </div>
 </div>

@@ -1,0 +1,44 @@
+<div class="layout">
+  <div class="card">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="prof-session">
+          <div class="profile-picture">
+            <img src="assets/images/passport.jpg" alt="profil picture">
+            <div class="file-input-wrapper">
+              <div class="icon-txt"><i class="far fa-edit"></i> Edit</div>
+              <input type="file" #file type="file" value="" />
+            </div>
+          </div>
+          <div class="prof-name">
+            <h5>Hi,</h5>
+            <h3>Ojo</h3>
+          </div>
+        </div>
+
+        <div class="nav-session">
+          <div class="nav-item" routerLink="/core-module/settings/profile" routerLinkActive="active"><i
+              class="fa fa-user-alt"></i>My Profile</div>
+        </div>
+        <div class="nav-session">
+          <div class="nav-item" routerLink="/core-module/settings/change-password" routerLinkActive="active"><i
+              class="fa fa-lock"></i>Change Password</div>
+        </div>
+        <div class="nav-session">
+          <div class="nav-item" routerLink="/core-module/settings/policy-procedure" routerLinkActive="active"><i
+              class="fa fa-file-alt"></i>Policy and Procedure</div>
+        </div>
+        <div class="nav-session">
+          <div class="nav-item" routerLink="/core-module/settings/documents" routerLinkActive="active"><i
+              class="fa fa-file-invoice"></i>My Documents</div>
+        </div>
+        <div class="nav-session">
+          <div class="nav-item"><i class="fa fa-sign-out-alt"></i>Sign Out</div>
+        </div>
+      </div>
+      <div class="col-sm-9">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

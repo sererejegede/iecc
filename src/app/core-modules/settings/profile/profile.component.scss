@@ -1,0 +1,44 @@
+// @import "../../../../auth/auth.scss";
+
+@import "../../../auth/auth.scss";
+
+.head-title {
+  .line-bottom {
+    border-bottom: 1px solid #ebeff2;
+  }
+}
+
+.row {
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  margin-top: 60px;
+  font-size: 14px;
+  min-width: 100%;
+}
+
+.profile-doc {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #9ea7bb;
+  img {
+    width: 50px;
+  }
+  .link {
+    font-size: 12px;
+  }
+  .link:hover {
+    font-style: italic;
+    cursor: pointer;
+    color: blue;
+  }
+}

@@ -12,7 +12,7 @@
           <small>London</small>
         </div>
         <div>
-          <div>8:00am - 12:00pm</div>
+          <div>{{roaster.starts | date : 'shortTime'}} - {{roaster.ends | date : 'shortTime'}}</div>
           <small>Status - <span class="blue">Completed</span></small>
         </div>
       </div>
@@ -41,7 +41,7 @@
 
     </div>
     <div class="calendarView">
-      <mat-calendar #calendar [(selected)]="selectedDate"></mat-calendar>
+      <mat-calendar #calendar [(selected)]="selectedDate"(selectedChange)="onSelect($event)" ></mat-calendar>
     </div>
   </div>
 </div>
@@ -52,6 +52,6 @@
 </div>
 
 <div *ngIf="rotaDetail" class="modal-overlay">
-    <app-rota-details (closeModal)="close_onClick($event)" id="form-modal" class="form-modal center-center">
-    </app-rota-details>
-  </div>
+  <app-rota-details (closeModal)="close_onClick($event)" id="form-modal" class="form-modal center-center">
+  </app-rota-details>
+</div>
