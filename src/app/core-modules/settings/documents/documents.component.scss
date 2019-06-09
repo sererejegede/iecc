@@ -1,0 +1,32 @@
+@import "../../../auth/auth.scss";
+
+@import "../profile/profile.component.scss";
+
+.lay {
+  margin-left: 80px;
+  .inner-lay {
+    padding: 30px;
+  }
+}
+
+.doc-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  img {
+    width: 40px;
+  }
+  a {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .actions {
+    color: #004983;
+    cursor: pointer;
+    font-weight: 700;
+  }
+}
