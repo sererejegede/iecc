@@ -10,10 +10,11 @@ import { BroadCastSelectedUserService } from 'src/app/services/broadcast-selecte
 import { SettingModuleRoute } from './settings.route';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { PolicyProcedureComponent } from './policy-procedure/policy-procedure.component';
+import { DocumentsComponent } from './documents/documents.component';
 
 
 @NgModule({
-  declarations: [SettingsComponent, ProfileComponent, ChangePasswordComponent, PolicyProcedureComponent],
+  declarations: [SettingsComponent, ProfileComponent, ChangePasswordComponent, PolicyProcedureComponent, DocumentsComponent],
   imports: [CommonModule, SettingModuleRoute, MaterialModule, HttpClientModule, FormsModule, ReactiveFormsModule,
     CoolStorageModule],
   providers: [BroadCastSelectedUserService]
