@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       (error) => {
         swal.fire({
           type: 'warning',
-          title: 'Login Failed, Plese check your Password',
+          title: 'Login Failed, Incorrect Username or Password',
           // description:'',
           showConfirmButton: false,
           timer: 1500

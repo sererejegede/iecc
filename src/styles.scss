@@ -493,9 +493,29 @@ select {
   }
 }
 
-
 .table .thead-dark th {
   color: #fff;
   background-color: #495268 !important;
   border-color: #454d55;
+}
+
+.srch {
+  display: inline-flex;
+  align-items: center;
+  i {
+    margin-right: 12px;
+    color: #9ea7bb;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  input {
+    outline: none !important;
+    border: none !important;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    color: #9ea7bb;
+  }
 }
