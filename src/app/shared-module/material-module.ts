@@ -32,6 +32,7 @@ import {
 	MatToolbarModule
 } from '@angular/material';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
 	declarations: [],
@@ -64,7 +65,8 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
 		MatProgressBarModule,
 		MatSidenavModule,
 		MatToolbarModule,
-		MatMomentDateModule
+		MatMomentDateModule,
+		DragDropModule
 	],
 	exports: [
 		MatNativeDateModule,
@@ -95,7 +97,8 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
 		MatProgressBarModule,
 		MatSidenavModule,
 		MatToolbarModule,
-		MatMomentDateModule
+		MatMomentDateModule,
+		DragDropModule
 	],
 	providers: []
 })

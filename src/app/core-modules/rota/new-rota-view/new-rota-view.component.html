@@ -1,0 +1,95 @@
+<div class="layout">
+  <div class="card">
+    <div class="top-action">
+      <!-- <div class="date-calendar">
+        <h4>{{rotadate.value | date:'longDate'}}</h4>
+        <input style="opacity: 0; display: none !important;" matInput [matDatepicker]="picker1"
+          [formControl]="rotadate">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </div> -->
+      <mat-form-field style="font-size: 20px !important; font-weight:600; background-color: none !important;">
+        <h4>{{rotadate.value | date:'longDate'}}</h4>
+        <input style="opacity: 0; display: none !important;" matInput [matDatepicker]="picker1"
+          [formControl]="rotadate">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+      <div class="srch">
+        <i class="fas fa-search"></i>
+        <input placeholder="Search by staff name">
+      </div>
+      <div (click)="onShowAddRota()" class="blue-btn"><i class="fa fa-plus"></i>New Rota</div>
+
+    </div>
+
+    <div class="list-container row">
+      <div class="todo-container column-container col-sm-4">
+        <h5>Pending Roaster List</h5>
+        <div class="pendingList" cdkDropList #pendingList="cdkDropList" [cdkDropListData]="todos"
+          [cdkDropListConnectedTo]="[completeList]" (cdkDropListDropped)="onDrop($event)">
+          <mat-card class="pndlist" *ngFor="let todo of todos" cdkDrag>
+            <mat-card-header style="display: flex; justify-content: flex-end;">
+              <i id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                class="fas fa-ellipsis-v"></i>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <a class="dropdown-item">Switch Shift</a>
+                <a (click)="onShowAddRota()" class="dropdown-item">Edit Shift</a>
+              </div>
+            </mat-card-header>
+            <div class="crd-body">
+              <div>
+                <h6>{{todo.name}}</h6>
+                <a>{{todo.category}}</a>
+              </div>
+              <div>
+                <a>12:00am - 2:00am</a><br>
+                <a>Status: <span class="orange">Pending</span></a>
+              </div>
+            </div>
+
+          </mat-card>
+        </div>
+      </div>
+
+      <div class="done-container column-container-complete col-sm-7">
+        <h5>Completed Roaster</h5>
+        <div class="complted" cdkDropList #completeList="cdkDropList" [cdkDropListData]="completed"
+          [cdkDropListConnectedTo]="pendingList" (cdkDropListDropped)="onDrop($event)">
+          <mat-card class="col-sm-5 cmplist" *ngFor="let complete of completed" cdkDrag>
+              <mat-card-header style="display: flex; justify-content: flex-end;">
+                  <i id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                    class="fas fa-ellipsis-v"></i>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <a class="dropdown-item">Switch Shift</a>
+                    <a (click)="onShowAddRota()" class="dropdown-item">Edit Shift</a>
+                  </div>
+                </mat-card-header>
+                <div class="crd-body">
+                  <div>
+                    <h6>{{complete.name}}</h6>
+                    <a>{{complete.category}}</a>
+                  </div>
+                  <div>
+                    <a>12:00am - 2:00am</a><br>
+                    <a>Status: <span class="blue">Complete</span></a>
+                  </div>
+                </div>
+          </mat-card>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="newRoaster" class="modal-overlay">
+  <app-new-roster (closeModal)="close_onClick($event)" id="form-modal" class="form-modal center-center">
+  </app-new-roster>
+</div>
+
+<div *ngIf="rotaDetail" class="modal-overlay">
+  <app-rota-details (closeModal)="close_onClick($event)" id="form-modal" class="form-modal center-center">
+  </app-rota-details>
+</div>

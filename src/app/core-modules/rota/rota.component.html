@@ -1,4 +1,4 @@
-<div class="layout">
+<!-- <div class="layout">
   <div class="card roaster-layout">
     <div class="roasterDetails">
       <div class="topAction">
@@ -12,7 +12,7 @@
           <small>London</small>
         </div>
         <div>
-          <!-- <div>{{roaster.starts | date : 'shortTime'}} - {{roaster.ends | date : 'shortTime'}}</div> -->
+          <div>{{roaster.starts | date : 'shortTime'}} - {{roaster.ends | date : 'shortTime'}}</div>
           <small>Status - <span class="blue">Completed</span></small>
         </div>
       </div>
@@ -44,8 +44,8 @@
       <mat-calendar #calendar [(selected)]="selectedDate"(selectedChange)="onSelect($event)" ></mat-calendar>
     </div>
   </div>
-</div>
-
+</div> -->
+<!-- 
 <div *ngIf="newRoaster" class="modal-overlay">
   <app-new-roster (closeModal)="close_onClick($event)" id="form-modal" class="form-modal center-center">
   </app-new-roster>
@@ -54,4 +54,6 @@
 <div *ngIf="rotaDetail" class="modal-overlay">
   <app-rota-details (closeModal)="close_onClick($event)" id="form-modal" class="form-modal center-center">
   </app-rota-details>
-</div>
+</div> -->
+
+<app-new-rota-view></app-new-rota-view>

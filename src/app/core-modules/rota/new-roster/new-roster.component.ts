@@ -52,7 +52,7 @@ export class NewRosterComponent implements OnInit {
       }
     );
 
-    this._userService.getAllUser().subscribe(
+    this._userService.getStaffs().subscribe(
       (payloadU: any) => {
         this.users = payloadU.data;
         console.log(payloadU);
