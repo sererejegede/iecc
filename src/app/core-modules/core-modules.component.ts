@@ -57,8 +57,9 @@ export class CoreModulesComponent implements OnInit {
   onShowNotification() {
     this.router.navigate(['/core-module/notification']);
   }
-  onRequest() {
-    this.router.navigate(['/core-module/request']);
+
+  onOpenChat() {
+    this.router.navigate(['/core-module/chat']);
   }
 
   onLogout() {

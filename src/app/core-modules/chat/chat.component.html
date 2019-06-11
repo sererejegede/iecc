@@ -1,0 +1,85 @@
+<div class="layout">
+  <div class="card">
+    <div class="row">
+
+
+      <!-- user List -->
+      <div class="col-sm-4 chatList">
+        <div class="scrh-top">
+          <div class="srch">
+            <i class="fas fa-search"></i>
+            <input placeholder="search by  name">
+          </div>
+          <i class="fa fa-plus addGroup"></i>
+        </div>
+        <hr>
+        <div class="innerList">
+          <mat-tab-group>
+            <mat-tab label="Individual" style="color: white;">
+              <div class="cht">
+                <div class="chatMember" [ngClass]="{'active': selectedUser == staff}" (click)="onSelectedUser(staff)"
+                  *ngFor="let staff of staffs">
+                  <div class="member-wrap">
+                    <img src="assets/icons/user.svg" alt="user-icon">
+                    <div>
+                      <h6>{{staff.firstName}} {{staff.lastName}}</h6>
+                      <a>Hello i'm here</a>
+                    </div>
+                  </div>
+                  <span>1</span>
+                </div>
+              </div>
+
+            </mat-tab>
+            <mat-tab label="Group">
+            </mat-tab>
+          </mat-tab-group>
+
+        </div>
+      </div>
+
+
+
+      <!-- chat Body -->
+      <div class="chatBody" *ngIf="showChatBody">
+        <div class="bodyTop">
+          <h2>{{selectedStaff?.firstName}} {{selectedStaff?.lastName}}</h2>
+          <div class="online">
+            <div class="noti-color-green"></div>
+            <a>online</a>
+          </div>
+        </div>
+        <hr>
+        <div class="bodyMessages">
+          <div class="leftmssg">
+            <img src="assets/icons/user.svg" alt="">
+            <div class="inner-wrap-msg">
+              <h6>{{user?.data.firstName}} {{user?.data.lastName}}</h6>
+              <div class="left-mssg-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non sapien at arcu sodales
+                  pellentesque</p>
+              </div>
+            </div>
+          </div>
+          <div class="rightmssg">
+            <div class="inner-wrap-msg">
+              <h6>{{selectedStaff?.firstName}} {{selectedStaff?.lastName}}</h6>
+              <div class="left-mssg-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non sapien at arcu sodales
+                  pellentesque</p>
+              </div>
+            </div>
+            <img src="assets/icons/user.svg" alt="">
+          </div>
+        </div>
+        <div class="footer">
+          <div class="srch">
+            <i class="far fa-smile"></i>
+            <input placeholder="Type a message here">
+          </div>
+          <i class="fas fa-paper-plane"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

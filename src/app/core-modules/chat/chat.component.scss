@@ -1,0 +1,213 @@
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: none !important;
+  background-clip: border-box;
+  border: none !important;
+  border-radius: 0.25rem;
+}
+
+.chatList {
+  background: #495268;
+  border-radius: 4px;
+  .scrh-top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    // border-bottom: 1px solid rgba(158, 167, 187, 0.2);
+    .srch {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50px;
+      padding: 10px;
+      input {
+        background: transparent;
+      }
+    }
+    .addGroup {
+      background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.53) 100%);
+      padding: 5px;
+      border-radius: 15px;
+      color: #495268;
+      cursor: pointer;
+    }
+  }
+
+  .innerList {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .mat-tab-label {
+    color: white;
+  }
+}
+
+.cht {
+  height: 450px;
+  overflow: auto;
+}
+.chatMember {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+
+  color: white;
+  .member-wrap {
+    display: flex;
+    align-items: center;
+    div {
+      margin-left: 15px;
+      a {
+        font-size: 10px;
+      }
+      h6 {
+        margin-bottom: 0px !important;
+      }
+    }
+  }
+}
+
+.chatMember span {
+  padding: 5px;
+  background: #35a3cb;
+  color: white;
+  font-size: 8px;
+  border-radius: 15px;
+}
+
+.chatMember img {
+  width: 50px;
+}
+
+.chatMember:hover {
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+}
+
+.active {
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+}
+
+hr {
+  border-top: 1px solid #9e9e9e !important;
+}
+
+.chatBody {
+  background: #f9f9f9;
+  border-radius: 4px;
+  width: 66%;
+  .bodyTop {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    h2 {
+      margin-bottom: 2px;
+      letter-spacing: 0.00166667em;
+      color: #495268;
+    }
+    .online {
+      display: flex;
+      align-items: center;
+      margin-left: 50px;
+      a {
+        margin-left: 5px;
+        color: #9ea7bb;
+      }
+    }
+  }
+
+  .bodyMessages {
+    height: 450px;
+    overflow: auto;
+    .leftmssg {
+      margin-left: 30px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: left;
+      align-items: end;
+      img {
+        width: 60px;
+      }
+      .inner-wrap-msg {
+        display: block;
+        box-sizing: border-box;
+        text-align: left;
+        color: #9ea7bb;
+        margin-left: 20px;
+        h6 {
+          font-size: 0.7rem !important;
+        }
+        .left-mssg-body {
+          max-width: 325px;
+          padding: 15px;
+          background: rgb(255, 255, 255);
+          border-radius: 0 15px 15px;
+          p {
+            font-size: 12px;
+            margin-bottom: 0px !important;
+          }
+        }
+      }
+    }
+
+    .rightmssg {
+      margin-right: 30px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: end;
+      img {
+        width: 60px;
+      }
+      .inner-wrap-msg {
+        display: block;
+        box-sizing: border-box;
+        text-align: right;
+        color: #9ea7bb;
+        margin-right: 20px;
+        h6 {
+          font-size: 0.7rem !important;
+        }
+        .left-mssg-body {
+          max-width: 325px;
+          padding: 15px;
+          background: rgb(255, 255, 255);
+          border-radius: 15px 0px 15px 15px;
+          p {
+            font-size: 12px;
+            margin-bottom: 0px !important;
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    background: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .srch {
+      background: none;
+      border-radius: 0px !important;
+      i {
+        margin-right: 12px;
+        color: #9ea7bb;
+        font-weight: normal !important;
+        font-size: 30px;
+      }
+      input {
+        margin-left: 30px;
+      }
+    }
+  }
+}
