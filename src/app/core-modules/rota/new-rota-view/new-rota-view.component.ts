@@ -82,20 +82,20 @@ export class NewRotaViewComponent implements OnInit {
 
   completed = [
     {
-      name: 'Android',
-      category: 'Mobile Development'
+      name: 'Gabriel Okeke',
+      category: 'Lagos, Nigeria'
     },
     {
-      name: 'MongoDB',
-      category: 'Databases'
+      name: 'Nurudeen Njidda',
+      category: 'Adamawa, Nigeria'
     },
     {
-      name: 'ARKit',
-      category: 'Augmented Reality'
+      name: 'Imolara Kazeem',
+      category: 'Togoy'
     },
     {
-      name: 'React',
-      category: 'Web Development'
+      name: 'Orefuyi Damilola',
+      category: 'Oyo, Nigeria'
     }
   ];
 

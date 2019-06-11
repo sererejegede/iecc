@@ -9,10 +9,8 @@
         <div class="col-sm-4 pageTitle">{{title}}</div>
         <div class="prof">
             <div class="prof-notif">
-                <i matBadge="1" matBadgeSize="small" matBadgePosition="above after" matBadgeColor="primary"
+                <i matBadge="1" matBadgeSize="small"  (click)="onOpenChat()" matBadgePosition="above after" matBadgeColor="primary"
                     class="far fa-comment-dots mat-icon"></i>
-                <!-- <mat-icon >
-                    message </mat-icon> -->
             </div>
             <div class="prof-notif dropdown">
                 <mat-icon matBadge="1" class="mat-icon" matBadgeSize="small" matBadgePosition="above after"
@@ -36,8 +34,7 @@
             </div>
 
             <div class="prof-detail ">
-                <div class="user-avatar" data-toggle="tooltip" data-placement="bottom"
-                    title="Profile">
+                <div class="user-avatar" data-toggle="tooltip" data-placement="bottom" title="Profile">
                     <img src="assets/images/passport.jpg" />
                     <div class="status"></div>
                 </div>

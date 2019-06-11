@@ -25,10 +25,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BroadCastSelectedUserService } from '../services/broadcast-selected-user.service';
 import { CoolStorageModule } from 'angular2-cool-storage';
 import { NewRotaViewComponent } from './rota/new-rota-view/new-rota-view.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 @NgModule({
-    declarations: [CoreModulesComponent, DashboardComponent, NotificationComponent, StaffTrackingComponent, RequestComponent, NewRequestComponent, ClientsComponent, RotaComponent, NewRosterComponent, RotaDetailsComponent, NewClientComponent, ClientDetailsComponent, PayrollReportComponent, TrainingComponent, NewRotaViewComponent],
+    declarations: [CoreModulesComponent, DashboardComponent, NotificationComponent, StaffTrackingComponent, RequestComponent, NewRequestComponent, ClientsComponent, RotaComponent, NewRosterComponent, RotaDetailsComponent, NewClientComponent, ClientDetailsComponent, PayrollReportComponent, TrainingComponent, NewRotaViewComponent, ChatComponent],
     imports: [CommonModule, CoreModuleRoute, FullCalendarModule, MaterialModule, HttpClientModule, FormsModule, ReactiveFormsModule,
 		CoolStorageModule,
         AgmCoreModule.forRoot({

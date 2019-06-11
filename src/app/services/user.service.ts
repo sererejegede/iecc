@@ -29,7 +29,7 @@ export class UserService {
     return this.http.get<IUser>(this.baseUrl + "/user/all");
   }
 
-  getUserById(userId) {
+  getUserById(userId) { 
     return this.http.get<IUser>(this.baseUrl + "/user/data", userId);
   }
 

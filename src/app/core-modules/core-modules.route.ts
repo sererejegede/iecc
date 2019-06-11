@@ -10,6 +10,7 @@ import { RotaComponent } from './rota/rota.component';
 import { ClientDetailsComponent } from './clients/client-details/client-details.component';
 import { PayrollReportComponent } from './payroll-report/payroll-report.component';
 import { TrainingComponent } from './training/training.component';
+import { ChatComponent } from './chat/chat.component';
 
 const COREMODULE_ROUTES: Routes = [
     {
@@ -26,6 +27,7 @@ const COREMODULE_ROUTES: Routes = [
             { path: 'rota', component: RotaComponent },
             { path: 'training', component: TrainingComponent },
             { path: 'reports', component: PayrollReportComponent },
+            { path: 'chat', component: ChatComponent },
             {
                 path: 'forms',
                 loadChildren: './forms/forms.module#FormModule'
