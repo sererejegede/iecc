@@ -25,7 +25,7 @@
     </div>
 
     <div class="action-bottom col-md-10">
-      <div (click)="onLogin()" class="primary-btn">Login</div>
+      <button [disabled]="btnDisabled" (click)="onLogin()" class="primary-btn">Login</button>
       <a class="reg">Don’t have an account? <span (click)="onRegister()">Sign up</span></a>
     </div>
   </div>

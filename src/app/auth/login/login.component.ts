@@ -18,6 +18,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   loginForm: FormGroup;
   hide = true;
 
+  btnDisabled: boolean = false;
+
   constructor(private router: Router,
     private _formBuilder: FormBuilder,
     private _locker: CoolLocalStorage,
@@ -53,6 +55,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           timer: 1500
         });
         console.log(payload);
+        this.btnDisabled = true;
         this._userService.selectUser(payload);
         this._locker.setObject('selectedUser', payload);
         this.router.navigate(['/core-module']);
