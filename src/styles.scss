@@ -62,7 +62,7 @@ select {
   /* box-sizing: border-box; */
   padding: 7px;
   font-weight: 600;
-  min-width: 200px;
+  min-width: 100px;
   margin: 20px;
   align-self: center;
 }
@@ -111,7 +111,7 @@ select {
   font-weight: 600;
   text-align: center;
   width: fit-content;
-  min-width: 150px;
+  min-width: 100px;
   margin: 20px;
   align-self: center;
   i {
@@ -121,6 +121,30 @@ select {
 .blue-btn:hover {
   cursor: pointer;
   background: #004983;
+  color: white;
+  box-shadow: 2px 3px #ddd;
+}
+
+
+.blue-btn-cancel {
+  border-radius: 30px;
+  color: #830000;
+  border: 1.5px solid #830000;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  width: fit-content;
+  min-width: 150px;
+  margin: 20px;
+  align-self: center;
+  i {
+    margin-right: 8px;
+  }
+}
+.blue-btn-cancel:hover {
+  cursor: pointer;
+  background: #830000;
   color: white;
   box-shadow: 2px 3px #ddd;
 }
@@ -327,7 +351,7 @@ select {
       font-size: 45px;
     }
     .primary-btn {
-      width: 150px;
+      min-width: 100px;
     }
     .tp {
       border-bottom: 1px solid #ddd;

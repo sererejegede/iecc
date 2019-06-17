@@ -5,6 +5,8 @@ import swal from 'sweetalert2';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { CoolLocalStorage } from 'angular2-cool-storage';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
+// import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +25,9 @@ export class LoginComponent implements OnInit, OnDestroy {
   constructor(private router: Router,
     private _formBuilder: FormBuilder,
     private _locker: CoolLocalStorage,
-    private _userService: UserService) { }
+    private _userService: UserService,
+    private ngxService: NgxUiLoaderService
+  ) { }
 
   ngOnInit() {
     const body = document.getElementsByTagName('body')[0];
@@ -43,11 +47,10 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   onLogin() {
-    console.log(this.loginForm);
-    // const email = this.loginForm.controls['email'].value;
-    // const password = this.loginForm.controls['password'].value;
+    this.ngxService.start();
     this._userService.loginUser(this.loginForm.value).subscribe(
       (payload: any) => {
+        this.ngxService.stop();
         swal.fire({
           type: 'success',
           title: 'Login Successful',
@@ -61,6 +64,8 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.router.navigate(['/core-module']);
       },
       (error) => {
+
+        this.ngxService.stop();
         swal.fire({
           type: 'warning',
           title: 'Login Failed, Incorrect Username or Password',

@@ -34,7 +34,7 @@ export class UserService {
   }
 
   updateProfileImage(userId) {
-    return this.http.post(this.baseUrl + "/user/update/picture", userId);
+    return this.http.post(this.baseUrl + "/user/update/picture/userId", userId);
   }
 
   forgetPassword(email) {

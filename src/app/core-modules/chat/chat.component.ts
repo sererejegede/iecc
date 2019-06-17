@@ -36,9 +36,7 @@ export class ChatComponent implements OnInit {
   onSelectedUser(staff){
     this.selectedStaff = staff;
     this.user = this._locker.getObject('selectedUser');
-    console.log(this.user);
     this.showChatBody = true;
-    console.log(this.selectedStaff);
   }
 
 }

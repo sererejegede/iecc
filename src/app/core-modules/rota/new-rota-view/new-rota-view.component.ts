@@ -13,6 +13,8 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 })
 export class NewRotaViewComponent implements OnInit {
 
+  switch = false;
+  nrScreen = true;
   newRoaster = false;
   rotaDetail = false;
   user;
@@ -54,6 +56,16 @@ export class NewRotaViewComponent implements OnInit {
   onShowRotaDetail() {
     this.newRoaster = false;
     this.rotaDetail = true;
+  }
+
+  onSelectSwitchBtn() {
+    this.switch = true;
+    this.nrScreen = false;
+  }
+
+  onCancelSwitchBtn() {
+    this.switch = false;
+    this.nrScreen = true;
   }
 
   selectedDate(){

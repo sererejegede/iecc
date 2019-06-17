@@ -4,6 +4,7 @@ import swal from 'sweetalert2';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { CoolLocalStorage } from 'angular2-cool-storage';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 
 @Component({
@@ -16,10 +17,11 @@ export class RegisterComponent implements OnInit, OnDestroy {
   user: any = <any>{};
   userForm: FormGroup;
   hide = true;
-  
+
   constructor(private router: Router,
     private _formBuilder: FormBuilder,
-    private _userService: UserService) { }
+    private _userService: UserService,
+    private ngxService: NgxUiLoaderService) { }
 
   ngOnInit() {
     const body = document.getElementsByTagName('body')[0];
@@ -35,8 +37,10 @@ export class RegisterComponent implements OnInit, OnDestroy {
   }
 
   onRegister() {
+    this.ngxService.start();
     this._userService.postUser(this.userForm.value).subscribe(
       (payload) => {
+        this.ngxService.stop();
         swal.fire({
           type: 'success',
           title: 'Registration Successful',
@@ -47,7 +51,8 @@ export class RegisterComponent implements OnInit, OnDestroy {
         this._userService.selectUser(payload);
         this.router.navigate(['/core-module']);
       },
-      (error) => {
+      (error) => {        
+        this.ngxService.stop();
         swal.fire({
           type: 'warning',
           title: 'Error Occur while registering',
@@ -65,7 +70,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     const body = document.getElementsByTagName('body')[0];
-		body.classList.remove('auth-layout');
+    body.classList.remove('auth-layout');
   }
 
 

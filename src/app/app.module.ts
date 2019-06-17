@@ -12,7 +12,9 @@ import { AgmCoreModule } from '@agm/core';
 import { ForgetPasswordComponent } from './auth/forget-password/forget-password.component';
 import { NewPasswordComponent } from './auth/new-password/new-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {  RxReactiveFormsModule } from "@rxweb/reactive-form-validators"
+import { RxReactiveFormsModule } from "@rxweb/reactive-form-validators"
+
+import { NgxUiLoaderModule, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule, NgxUiLoaderConfig, POSITION, SPINNER, PB_DIRECTION } from  'ngx-ui-loader';
 
 import swal from 'sweetalert2';
 import { UserService } from './services/user.service';
@@ -21,6 +23,16 @@ import { RoasterService } from './services/roaster.service';
 import { CoolStorageModule } from 'angular2-cool-storage';
 import { RequestService } from './services/request.service';
 
+
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  bgsColor: 'red',
+  bgsPosition: POSITION.bottomCenter,
+  bgsSize: 40,
+  bgsType: SPINNER.rectangleBounce, // background spinner type
+  fgsType: SPINNER.chasingDots, // foreground spinner type
+  pbDirection: PB_DIRECTION.leftToRight, // progress bar direction
+  pbThickness: 5, // progress bar thickness
+};
 
 @NgModule({
   declarations: [
@@ -36,12 +48,15 @@ import { RequestService } from './services/request.service';
     BrowserAnimationsModule,
     MaterialModule,
     AgmCoreModule,
-		CoolStorageModule,
-    HttpClientModule, FormsModule, ReactiveFormsModule, RxReactiveFormsModule
+    CoolStorageModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxUiLoaderRouterModule,
+    NgxUiLoaderHttpModule,
+    HttpClientModule, FormsModule, ReactiveFormsModule, RxReactiveFormsModule,
   ],
   providers: [
     UserService,
-    ClientService, 
+    ClientService,
     RoasterService,
     RequestService
   ],
