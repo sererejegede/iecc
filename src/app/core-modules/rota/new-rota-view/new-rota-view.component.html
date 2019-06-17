@@ -19,27 +19,60 @@
         <i class="fas fa-search"></i>
         <input placeholder="Search by staff name">
       </div>
-      <div (click)="onShowAddRota()" class="blue-btn"><i class="fa fa-plus"></i>New Rota</div>
+      <div *ngIf="nrScreen" (click)="onShowAddRota()" class="blue-btn"><i class="fa fa-plus"></i>New Rota</div>
+
+      <div class="switch" *ngIf="switch">
+        <div (click)="onCancelSwitchBtn()" class="blue-btn-cancel"><i class="fa fa-times"></i>Cancel</div>
+        <div class="blue-btn"><i class="fa fa-toggle-on"></i>Switch</div>
+      </div>
 
     </div>
 
     <div class="list-container row">
       <div class="todo-container column-container col-sm-4">
+        <h5>Completed Roaster</h5>
+        <div class="complted" cdkDropList #completeList="cdkDropList" [cdkDropListData]="completed"
+          [cdkDropListConnectedTo]="pendingList" (cdkDropListDropped)="onDrop($event)">
+          <mat-card class="cmplist" *ngFor="let complete of completed" cdkDrag>
+            <mat-card-header style="display: flex; justify-content: flex-end;">
+              <!-- <i id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                class="fas fa-ellipsis-v"></i>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <a class="dropdown-item disabled">Switch Shift</a>
+                <a (click)="onShowAddRota()" class="dropdown-item">Edit Shift</a>
+              </div> -->
+            </mat-card-header>
+            <div class="crd-body">
+              <div>
+                <h6>{{complete.name}}</h6>
+                <a>{{complete.category}}</a>
+              </div>
+              <div>
+                <a>12:00am - 2:00am</a><br>
+                <a>Status: <span class="blue">Complete</span></a>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+
+      <div class="done-container column-container-complete col-sm-7">
         <h5>Pending Roaster List</h5>
         <div class="pendingList" cdkDropList #pendingList="cdkDropList" [cdkDropListData]="todos"
           [cdkDropListConnectedTo]="[completeList]" (cdkDropListDropped)="onDrop($event)">
-          <mat-card class="pndlist" *ngFor="let todo of todos" cdkDrag>
+          <mat-card class="pndlist col-sm-5" *ngFor="let todo of todos" cdkDrag>
             <mat-card-header style="display: flex; justify-content: flex-end;">
-              <i id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              <mat-checkbox *ngIf="switch"></mat-checkbox>
+              <i *ngIf="nrScreen" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 class="fas fa-ellipsis-v"></i>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <a class="dropdown-item">Switch Shift</a>
+              <div *ngIf="nrScreen" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <a (click)="onSelectSwitchBtn()" class="dropdown-item">Switch Shift</a>
                 <a (click)="onShowAddRota()" class="dropdown-item">Edit Shift</a>
               </div>
             </mat-card-header>
             <div class="crd-body">
               <div>
-                <h6>{{todo.name}}</h6>
+                <h6 (click)="onShowRotaDetail()">{{todo.name}}</h6>
                 <a>{{todo.category}}</a>
               </div>
               <div>
@@ -48,33 +81,6 @@
               </div>
             </div>
 
-          </mat-card>
-        </div>
-      </div>
-
-      <div class="done-container column-container-complete col-sm-7">
-        <h5>Completed Roaster</h5>
-        <div class="complted" cdkDropList #completeList="cdkDropList" [cdkDropListData]="completed"
-          [cdkDropListConnectedTo]="pendingList" (cdkDropListDropped)="onDrop($event)">
-          <mat-card class="col-sm-5 cmplist" *ngFor="let complete of completed" cdkDrag>
-              <mat-card-header style="display: flex; justify-content: flex-end;">
-                  <i id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                    class="fas fa-ellipsis-v"></i>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <a class="dropdown-item">Switch Shift</a>
-                    <a (click)="onShowAddRota()" class="dropdown-item">Edit Shift</a>
-                  </div>
-                </mat-card-header>
-                <div class="crd-body">
-                  <div>
-                    <h6>{{complete.name}}</h6>
-                    <a>{{complete.category}}</a>
-                  </div>
-                  <div>
-                    <a>12:00am - 2:00am</a><br>
-                    <a>Status: <span class="blue">Complete</span></a>
-                  </div>
-                </div>
           </mat-card>
         </div>
       </div>

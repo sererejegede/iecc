@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ClientService } from 'src/app/services/clients.service';
@@ -6,19 +6,21 @@ import swal from 'sweetalert2';
 import { Client } from 'src/app/models/client';
 import { IUserNOK } from 'src/app/models/userNOK';
 import { ISocialWorkDetails } from 'src/app/models/socialWorkDetail';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-new-client',
   templateUrl: './new-client.component.html',
   styleUrls: ['./new-client.component.scss']
 })
-export class NewClientComponent implements OnInit {
+export class NewClientComponent implements OnInit, OnDestroy {
   panelOpenState = false;
 
   @Output() closeModal: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   client: any = <any>{};
   clientForm: FormGroup;
+  subscription: Subscription;
 
   constructor(
     private router: Router,
@@ -74,7 +76,7 @@ export class NewClientComponent implements OnInit {
         number: this.clientForm.controls['SocialWorknumber'].value
       })
     }
-    this._clientService.postClients(clientModel).subscribe(
+   this.subscription =  this._clientService.postClients(clientModel).subscribe(
       (payload) => {
         swal.fire({
           type: 'success',
@@ -100,4 +102,8 @@ export class NewClientComponent implements OnInit {
   close_onClick() {
     this.closeModal.emit(true);
   }
+
+  ngOnDestroy() {
+		this.subscription.unsubscribe();
+	}
 }
