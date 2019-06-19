@@ -1,6 +1,7 @@
 import { IRoasterShift } from './roasterShift';
 
 export class Roaster {
+    public _id: string;
     public userId: string;
     public status: string;
     public clientId: string;

@@ -44,11 +44,11 @@
             </mat-card-header>
             <div class="crd-body">
               <div>
-                <h6>{{complete.name}}</h6>
-                <a>{{complete.category}}</a>
+                <h6>{{complete?.user?.firstName}} {{complete?.user?.lastName}}</h6>
+                <a>{{complete?.address}}</a>
               </div>
               <div>
-                <a>12:00am - 2:00am</a><br>
+                <a>{{ complete?.shift?.starts | date }} - {{ complete?.shift?.ends | date }}</a><br>
                 <a>Status: <span class="blue">Complete</span></a>
               </div>
             </div>
@@ -60,7 +60,7 @@
         <h5>Pending Roaster List</h5>
         <div class="pendingList" cdkDropList #pendingList="cdkDropList" [cdkDropListData]="todos"
           [cdkDropListConnectedTo]="[completeList]" (cdkDropListDropped)="onDrop($event)">
-          <mat-card class="pndlist col-sm-5" *ngFor="let todo of todos" cdkDrag>
+          <mat-card class="pndlist col-sm-5" *ngFor="let todo of todos; let i = index" cdkDrag>
             <mat-card-header style="display: flex; justify-content: flex-end;">
               <mat-checkbox *ngIf="switch"></mat-checkbox>
               <i *ngIf="nrScreen" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -70,14 +70,17 @@
                 <a (click)="onShowAddRota()" class="dropdown-item">Edit Shift</a>
               </div>
             </mat-card-header>
-            <div class="crd-body">
+            <div class="crd-body" (click)="onShowRotaDetail(todo, i)">
               <div>
-                <h6 (click)="onShowRotaDetail()">{{todo?.user?.name}}</h6>
-                <a>{{todo.category}}</a>
+                <h6>{{todo?.user?.firstName}} {{todo?.user?.lastName}}</h6>
+                <a>{{todo?.user?.address}}</a>
               </div>
               <div>
                 <a>{{ todo?.shift?.starts | date }} - {{ todo?.shift?.ends | date }}</a><br>
-                <a>Status: <span class="orange">Pending</span></a>
+                <a>Status:
+                  <span class="orange" *ngIf="todo?.status === 'pending'">Pending</span>
+                  <span class="green" *ngIf="todo?.status === 'ongoing'">Ongoing</span>
+                </a>
               </div>
             </div>
 
@@ -96,6 +99,10 @@
 </div>
 
 <div *ngIf="rotaDetail" class="modal-overlay">
-  <app-rota-details (closeModal)="close_onClick($event)" id="form-modal" class="form-modal center-center">
+  <app-rota-details
+    [roasterDetails]="selectedRoaster"
+    (closeModal)="close_onClick($event)"
+    id="form-modal"
+    class="form-modal center-center">
   </app-rota-details>
 </div>

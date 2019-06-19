@@ -26,10 +26,10 @@ export class RoasterService {
   }
 
   updateRoasterCompleted(roasterId) {
-    return this.http.put(this.baseUrl + '/roaster/update/completed/', roasterId);
+    return this.http.put(this.baseUrl + `/roaster/update/completed/${roasterId}`, {});
   }
 
   updateRoasterOngoing(roasterId) {
-    return this.http.put(this.baseUrl + '/roaster/update/ongoing/', roasterId);
+    return this.http.put(this.baseUrl + `/roaster/update/ongoing/${roasterId}`, {});
   }
 }

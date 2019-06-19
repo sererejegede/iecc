@@ -1,6 +1,6 @@
 <div class="animated pulse">
   <div class="modal-header-wrap">
-    <div (click)="close_onClick()" class="modal-close-ico" aria-hidden="true">X</div>
+    <div (click)="close_onClick()" class="modal-close-ico" aria-hidden="true">&times;</div>
   </div>
   <div class="modal-baseWrap">
     <br>
@@ -14,25 +14,26 @@
       </div>
       <div class="blue-btn">View Care Plan</div>
     </div>
-    <div class="col-sm-4 inner-details">
+    <div class=" inner-details">
       <h6>PATIENT NAME</h6>
-      <h5>Sean Paul</h5>
+      <h5>{{ roasterDetails?.user?.firstName }} {{ roasterDetails?.user?.lastName }}</h5>
     </div>
-    <div class="col-sm-4 inner-details">
+    <div class=" inner-details">
       <h6>TIME</h6>
       <h5>8:00 am - 12:00 pm</h5>
     </div>
-    <div class="col-sm-6 inner-details">
+    <div class=" inner-details">
       <h6>ADDRESS</h6>
-      <h5>22, Beacon Lodge 2 Gladstone Road,
-        Colchester, Essex, CO1 2EB, London</h5>
+      <h5>{{ roasterDetails?.user?.address }}</h5>
     </div>
-    <div class="col-sm-4 inner-details">
+    <div class=" inner-details">
       <h6>STATUS</h6>
-      <h5 class="orange">Pending</h5>
+      <h5 [ngClass]="roasterDetails?.status === 'pending' ? 'orange' : 'green'">{{ roasterDetails?.status | titlecase }}</h5>
     </div>
-    <div class="btn-wrap">
-      <div class="primary-btn">Submit</div>
+    <div class="btn-wrap" *ngIf="roasterDetails?.status === 'pending' || roasterDetails?.status === 'ongoing'">
+      <div class="primary-btn" (click)="roasterDetails?.status === 'pending' ? updateRoasterOngoing() : updateRoasterCompleted()">
+        {{ roasterDetails?.status === 'pending' ? 'Clock in' : 'Clock out' }}
+      </div>
     </div>
 
   </div>

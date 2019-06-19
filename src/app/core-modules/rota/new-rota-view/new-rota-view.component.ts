@@ -6,6 +6,7 @@ import { RoasterService } from 'src/app/services/roaster.service';
 import { FormControl } from '@angular/forms';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import {ClientService} from '../../../services/clients.service';
+import {UserService} from '../../../services/user.service';
 
 @Component({
   selector: 'app-new-rota-view',
@@ -59,41 +60,46 @@ export class NewRotaViewComponent implements OnInit {
       category: 'Oyo, Nigeria'
     }
   ];
-  public clients: any[] = [];
+  public users: any[] = [];
+  public selectedRoaster: any;
 
   constructor(private _pageloaderService: pageloaderService,
     private _locker: CoolLocalStorage,
-    private _clientService: ClientService,
+    private _userService: UserService,
     private _roasterService: RoasterService) { }
 
   ngOnInit() {
     this._pageloaderService.setTitle('Rota');
     this.user = this._locker.getObject('selectedUser');
-    this.getClients();
-    // console.log(this.rotadate);
+    this.getUsers();
   }
 
-  getRoasterByDate() {
+  getRoasterByDate(onInit?) {
     // Convert date to string
-    this.rotadate.value._i.month = this.rotadate.value._i.month + 1;
-    const date_object = {
-      year: this.rotadate.value._i.year,
-      month: this.rotadate.value._i.month.toString().length < 2 ? `0${this.rotadate.value._i.month}` : this.rotadate.value._i.month,
-      date: this.rotadate.value._i.date.toString().length < 2 ? `0${this.rotadate.value._i.date}` : this.rotadate.value._i.date,
-    };
-    const date_string = Object.values(date_object).join('-');
+    let date_string;
+    if (onInit) {
+      date_string = new Date().toISOString().slice(0, 10);
+    } else {
+      this.rotadate.value._i.month = this.rotadate.value._i.month + 1;
+      const date_object = {
+        year: this.rotadate.value._i.year,
+        month: this.rotadate.value._i.month.toString().length < 2 ? `0${this.rotadate.value._i.month}` : this.rotadate.value._i.month,
+        date: this.rotadate.value._i.date.toString().length < 2 ? `0${this.rotadate.value._i.date}` : this.rotadate.value._i.date,
+      };
+      date_string = Object.values(date_object).join('-');
+    }
     this._roasterService.getRoasterByDate(date_string).subscribe(
       (payload: any) => {
         this.roaster = payload;
         payload.data.forEach(load => {
-          this.clients.forEach(client => {
-            if (load.clientId === client._id) {
-              load['user'] = client;
+          this.users.forEach(user => {
+            if (load.userId === user._id) {
+              load['user'] = user;
             }
           });
         });
         console.log(payload);
-        this.todos = payload.data.filter(roaster => roaster.status === 'pending');
+        this.todos = payload.data.filter(roaster => (roaster.status === 'pending' || roaster.status === 'ongoing'));
         this.completed = payload.data.filter(roaster => roaster.status === 'completed');
       },
       (error) => {
@@ -101,10 +107,11 @@ export class NewRotaViewComponent implements OnInit {
       });
   }
 
-  private getClients() {
-    this._clientService.getClients().subscribe(
+  private getUsers() {
+    this._userService.getAllUser().subscribe(
       (payload: any) => {
-        this.clients = payload.data;
+        this.users = payload.data;
+        this.getRoasterByDate(true);
       },
       (error) => {
         console.log(error);
@@ -115,15 +122,21 @@ export class NewRotaViewComponent implements OnInit {
   close_onClick(e) {
     this.newRoaster = false;
     this.rotaDetail = false;
+    if (this.selectedRoaster.status === 'completed') {
+      this.todos.splice(this.selectedRoaster['index'], 1);
+      this.completed.unshift(this.selectedRoaster);
+    }
   }
 
   onShowAddRota() {
     this.newRoaster = true;
     this.rotaDetail = false;
   }
-  onShowRotaDetail() {
+  onShowRotaDetail(roaster, index) {
     this.newRoaster = false;
     this.rotaDetail = true;
+    this.selectedRoaster = roaster;
+    this.selectedRoaster['index'] = index;
   }
 
   onSelectSwitchBtn() {
