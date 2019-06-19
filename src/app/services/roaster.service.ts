@@ -14,22 +14,22 @@ export class RoasterService {
   constructor(private http: HttpClient) { }
 
   postRoater(roaster) {
-    return this.http.post(this.baseUrl + "/roaster/create/", roaster);
+    return this.http.post(this.baseUrl + '/roaster/create/', roaster);
   }
 
   getRoaster(userId) {
-    return this.http.get<Roaster>(this.baseUrl + "/roaster/", userId);
+    return this.http.get<Roaster>(this.baseUrl + '/roaster/', userId);
   }
 
   getRoasterByDate(date) {
-    return this.http.get<Roaster>(this.baseUrl + "/roaster/shift/start/date", date);
+    return this.http.get<Roaster>(this.baseUrl + `/roaster/shift/start/${date}`);
   }
 
-  updateRoasterCompleted(roasterId){
-    return this.http.put(this.baseUrl + "/roaster/update/completed/", roasterId)
+  updateRoasterCompleted(roasterId) {
+    return this.http.put(this.baseUrl + '/roaster/update/completed/', roasterId);
   }
 
-  updateRoasterOngoing(roasterId){
-    return this.http.put(this.baseUrl + "/roaster/update/ongoing/", roasterId)
+  updateRoasterOngoing(roasterId) {
+    return this.http.put(this.baseUrl + '/roaster/update/ongoing/', roasterId);
   }
 }

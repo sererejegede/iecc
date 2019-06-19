@@ -11,7 +11,7 @@
       <mat-form-field style="font-size: 20px !important; font-weight:600; background-color: none !important;">
         <h4>{{rotadate.value | date:'longDate'}}</h4>
         <input style="opacity: 0; display: none !important;" matInput [matDatepicker]="picker1"
-          [formControl]="rotadate">
+          [formControl]="rotadate" (dateChange)="getRoasterByDate()">
         <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
       </mat-form-field>
@@ -72,11 +72,11 @@
             </mat-card-header>
             <div class="crd-body">
               <div>
-                <h6 (click)="onShowRotaDetail()">{{todo.name}}</h6>
+                <h6 (click)="onShowRotaDetail()">{{todo?.user?.name}}</h6>
                 <a>{{todo.category}}</a>
               </div>
               <div>
-                <a>12:00am - 2:00am</a><br>
+                <a>{{ todo?.shift?.starts | date }} - {{ todo?.shift?.ends | date }}</a><br>
                 <a>Status: <span class="orange">Pending</span></a>
               </div>
             </div>
