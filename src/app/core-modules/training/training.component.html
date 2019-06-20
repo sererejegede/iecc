@@ -10,6 +10,12 @@
       <div *ngIf="traningAvailable">
         <div class="topAction">
           <h5>{{selectedDate | date}}</h5>
+          <div class="btn-wrap">
+            <div class="primary-btn" (click)="showModal = true">
+              <i class="fa fa-plus"></i>
+              Add New
+            </div>
+          </div>
         </div>
         <div class="rotaDetail" *ngFor="let training of dateTrainings; let i = index">
           <!--<i class="fa fa-plus"></i>-->
@@ -25,7 +31,108 @@
 
     </div>
     <div class="calendarView">
-      <mat-calendar #calendar [(selected)]="selectedDate" (selectedChange)="setDate($event)" ></mat-calendar>
+      <mat-calendar #calendar [(selected)]="selectedDate" (selectedChange)="setDate($event)"></mat-calendar>
+    </div>
+  </div>
+</div>
+<div class="modal-overlay" *ngIf="showModal">
+  <div class="form-modal center-center">
+    <div class="animated pulse">
+      <div class="modal-header-wrap">
+        <div (click)="showModal = false" class="modal-close-ico" aria-hidden="true">&times;</div>
+      </div>
+      <div class="modal-baseWrap">
+        <br>
+        <form [formGroup]="trainingForm">
+          <div class="input-group">
+            <div class="input-group-wrap">
+              <div class="InputGroup">
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Title" formControlName="title">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="input-group-wrap">
+              <div class="InputGroup">
+                <mat-form-field>
+                  <mat-label>User</mat-label>
+                  <mat-select formControlName="userId">
+                    <mat-option [value]="user?._id" *ngFor="let user of users">
+                      <span *ngIf="user?.name">{{ user?.name }}</span>
+                      <span *ngIf="!user?.name">{{ user?.firstName }} {{ user?.lastName }}</span>
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <!--<div class="grd_color"></div>-->
+            </div>
+          </div>
+
+          <div class="input-group">
+
+            <div class="input-group-wrap">
+              <div class="InputGroup">
+                <mat-form-field>
+                  <input matInput type="time" placeholder="Start Time" formControlName="startTime">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="input-group-wrap">
+              <div class="InputGroup">
+                <mat-form-field>
+                  <input matInput type="time" placeholder="End Time" formControlName="endTime">
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <div class="input-group-wrap">
+              <div class="InputGroup">
+                <mat-form-field>
+                  <!--<mat-label>Attendance Date</mat-label>-->
+                  <!--<span>{{ trainingForm.value.dateAttended | date:'longDate' }}</span>-->
+                  <input matInput [matDatepicker]="picker2" placeholder="Attendance Date"
+                         formControlName="dateAttended">
+                  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                  <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="input-group-wrap">
+              <div class="InputGroup">
+                <mat-form-field>
+                  <!--<mat-label>Expiry Date</mat-label>-->
+                  <!--<span>{{ trainingForm.value.expiresOn | date:'longDate' }}</span>-->
+                  <input matInput [matDatepicker]="picker3" placeholder="Expiry Date"
+                         formControlName="expiresOn">
+                  <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                  <mat-datepicker #picker3></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input-group-wrap">
+              <div class="InputGroup">
+                <mat-form-field>
+                  <mat-label>Status</mat-label>
+                  <mat-select formControlName="status">
+                    <mat-option value="pending">Pending</mat-option>
+                    <mat-option value="ongoing">Ongoing</mat-option>
+                    <mat-option value="completed">Completed</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <!--<div class="grd_color"></div>-->
+            </div>
+          </div>
+        </form>
+
+        <div class="btn-wrap">
+          <div (click)="createTraining()" class="primary-btn">Submit</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

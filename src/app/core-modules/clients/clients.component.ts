@@ -72,7 +72,7 @@ export class ClientsComponent implements OnInit {
   public getUpdatedClient(client) {
     console.log(this.selectedClient);
     if (this.selectedClient['index'] || this.selectedClient['index'] === 0) {
-      this.clients.splice(this.selectedClient['index'], 1, client.data);
+      this.clientChunks.splice(this.selectedClient['index'], 1, client.data);
     }
   }
 
