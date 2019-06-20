@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, OnDestroy, Input} from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ClientService } from 'src/app/services/clients.service';
@@ -16,6 +16,7 @@ import { Subscription } from 'rxjs';
 export class NewClientComponent implements OnInit, OnDestroy {
   panelOpenState = false;
 
+  @Input() selectedClient: any;
   @Output() closeModal: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   client: any = <any>{};
@@ -33,7 +34,7 @@ export class NewClientComponent implements OnInit, OnDestroy {
     body.classList.add('modal-baseWrap');
     this.clientForm = this._formBuilder.group({
       name: ['', [<any>Validators.required, Validators.minLength(3)]],
-      email: ['', Validators.compose([Validators.required, Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)])],
+      email: ['', Validators.compose([Validators.required, Validators.email])],
       password: ['', [<any>Validators.required]],
       description: ['', [<any>Validators.required]],
       telephoneNumber: ['', Validators.compose([Validators.required, Validators.pattern(/^\+?([0-9]+)\)?[-. ]?([0-9]+)\)?[-. ]?([0-9]+)[-. ]?([0-9]+)$/)])],
@@ -50,6 +51,10 @@ export class NewClientComponent implements OnInit, OnDestroy {
       SocialWorkcompany: ['', []],
       SocialWorknumber: ['', []]
     });
+    if (this.selectedClient) {
+      console.log(this.selectedClient);
+      this.clientForm.patchValue(this.selectedClient);
+    }
   }
 
   onSaveClient() {
@@ -104,6 +109,8 @@ export class NewClientComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-		this.subscription.unsubscribe();
-	}
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
 }

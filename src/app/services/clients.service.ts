@@ -37,4 +37,8 @@ export class ClientService {
         return this.http.get(`${this.baseUrl}/client/${clientid}`);
     }
 
+    public updateClient(clientId, data) {
+      return this.http.put(`${this.baseUrl}/client/update/${clientId}`, data);
+    }
+
 }

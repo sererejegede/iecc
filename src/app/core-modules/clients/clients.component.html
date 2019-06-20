@@ -38,7 +38,7 @@
       <div class="col-sm-3 client-card" *ngFor="let client of clients">
         <div class="edit-wrap">
           <h6 (click)="onSelectedClient(client)">{{client.name}}</h6>
-          <i (click)="onShowNewClient()" class="fa fa-edit"></i>
+          <i (click)="onShowNewClient(client)" class="fa fa-edit"></i>
         </div>
         <p>{{client.telephoneNumber}}</p>
         <p>{{client.address}}</p>
@@ -52,6 +52,6 @@
 </div>
 
 <div *ngIf="newClientPopup" class="modal-overlay">
-  <app-new-client (closeModal)="close_onClick($event)" id="form-modal" class="form-modal center-center">
+  <app-new-client [selectedClient]="selectedClient" (closeModal)="close_onClick($event)" id="form-modal" class="form-modal center-center">
   </app-new-client>
 </div>

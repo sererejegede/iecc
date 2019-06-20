@@ -45,8 +45,9 @@ export class ClientsComponent implements OnInit {
   }
 
 
-  onShowNewClient() {
+  onShowNewClient(client) {
     this.newClientPopup = true;
+    this.selectedClient = client;
   }
 
   onShowDetail() {
