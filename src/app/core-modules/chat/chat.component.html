@@ -17,13 +17,13 @@
           <mat-tab-group>
             <mat-tab label="Individual" style="color: white;">
               <div class="cht">
-                <div class="chatMember" [ngClass]="{'active': selectedUser == staff}" (click)="onSelectedUser(staff)"
+                <div class="chatMember" (click)="onSelectedUser(staff)" [ngClass]="{'active': selectedStaff == staff}"
                   *ngFor="let staff of staffs">
-                  <div class="member-wrap">
+                  <div class="member-wrap" (click)="getUserChats(staff._id)">
                     <img src="assets/icons/user.svg" alt="user-icon">
                     <div>
                       <h6>{{staff.firstName}} {{staff.lastName}}</h6>
-                      <a>Hello i'm here</a>
+                      <a>{{staff?.address}}</a>
                     </div>
                   </div>
                   <span>1</span>
