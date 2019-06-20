@@ -7,6 +7,7 @@ import { FormControl } from '@angular/forms';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import {ClientService} from '../../../services/clients.service';
 import {UserService} from '../../../services/user.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-new-rota-view',
@@ -19,6 +20,11 @@ export class NewRotaViewComponent implements OnInit {
   nrScreen = true;
   newRoaster = false;
   rotaDetail = false;
+  swap = {
+    index: 0,
+    firstRoasterId: 0,
+    secondRoasterId: 0
+  };
   user;
   roaster: Roaster[] = [];
 
@@ -99,7 +105,7 @@ export class NewRotaViewComponent implements OnInit {
           });
         });
         console.log(payload);
-        this.todos = payload.data.filter(roaster => (roaster.status === 'pending' || roaster.status === 'ongoing'));
+        this.todos = payload.data.filter(roaster => (['pending', 0, '0', 'ongoing', 1, '1'].includes(roaster.status)));
         this.completed = payload.data.filter(roaster => roaster.status === 'completed');
       },
       (error) => {
@@ -139,9 +145,34 @@ export class NewRotaViewComponent implements OnInit {
     this.selectedRoaster['index'] = index;
   }
 
-  onSelectSwitchBtn() {
+  onSelectSwitchBtn(todo_id?, index?) {
     this.switch = true;
     this.nrScreen = false;
+    if ((index || index === 0) && todo_id) {
+      this.swap.index = index;
+      this.swap.firstRoasterId = todo_id;
+    }
+  }
+
+  public swapRoaster() {
+    this._roasterService.swapRoaster(this.swap).subscribe(res => {
+      this.onCancelSwitchBtn();
+      this.getRoasterByDate(true);
+      swal.fire({
+        type: 'success',
+        title: 'Roaster swapped successfully',
+        showCancelButton: false,
+        timer: 1500
+      });
+    }, err => {
+      swal.fire({
+        type: 'error',
+        title: 'Could not swap roaster',
+        showCancelButton: false,
+        timer: 1500
+      });
+      console.log(err);
+    });
   }
 
   onCancelSwitchBtn() {

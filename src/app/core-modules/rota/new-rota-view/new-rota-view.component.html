@@ -23,7 +23,7 @@
 
       <div class="switch" *ngIf="switch">
         <div (click)="onCancelSwitchBtn()" class="blue-btn-cancel"><i class="fa fa-times"></i>Cancel</div>
-        <div class="blue-btn"><i class="fa fa-toggle-on"></i>Switch</div>
+        <div class="blue-btn" (click)="swapRoaster()"><i class="fa fa-toggle-on"></i>Switch</div>
       </div>
 
     </div>
@@ -62,11 +62,11 @@
           [cdkDropListConnectedTo]="[completeList]" (cdkDropListDropped)="onDrop($event)">
           <mat-card class="pndlist col-sm-5" *ngFor="let todo of todos; let i = index" cdkDrag>
             <mat-card-header style="display: flex; justify-content: flex-end;">
-              <mat-checkbox *ngIf="switch"></mat-checkbox>
+              <mat-radio-button (change)="swap.secondRoasterId = todo?._id" *ngIf="switch && swap.index !== i"></mat-radio-button>
               <i *ngIf="nrScreen" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 class="fas fa-ellipsis-v"></i>
               <div *ngIf="nrScreen" class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <a (click)="onSelectSwitchBtn()" class="dropdown-item">Switch Shift</a>
+                <a (click)="onSelectSwitchBtn(todo?._id, i)" class="dropdown-item">Switch Shift</a>
                 <a (click)="onShowAddRota()" class="dropdown-item">Edit Shift</a>
               </div>
             </mat-card-header>

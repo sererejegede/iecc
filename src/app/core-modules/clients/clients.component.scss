@@ -44,3 +44,7 @@
 .cont-title-date {
   justify-content: space-between !important;
 }
+
+.disabled:hover {
+  cursor: not-allowed;
+}

@@ -32,4 +32,8 @@ export class RoasterService {
   updateRoasterOngoing(roasterId) {
     return this.http.put(this.baseUrl + `/roaster/update/ongoing/${roasterId}`, {});
   }
+
+  public swapRoaster(data) {
+    return this.http.put(`${this.baseUrl}/roaster/swap`, data);
+  }
 }

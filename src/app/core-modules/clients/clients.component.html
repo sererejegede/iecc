@@ -35,7 +35,7 @@
     </table> -->
 
     <div class="row">
-      <div class="col-sm-3 client-card" *ngFor="let client of clients; let i = index">
+      <div class="col-sm-3 client-card" *ngFor="let client of clientChunks; let i = index">
         <div class="edit-wrap">
           <h6 (click)="onSelectedClient(client)">{{client.name}}</h6>
           <i (click)="onShowNewClient(client, i)" class="fa fa-edit"></i>
@@ -47,7 +47,7 @@
       </div>
     </div>
 
-    <div class="blue-btn">Load More</div>
+    <div class="blue-btn" (click)="loadMore()">Load More</div>
   </div>
 </div>
 

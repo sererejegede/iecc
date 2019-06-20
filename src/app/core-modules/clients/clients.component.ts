@@ -14,7 +14,13 @@ export class ClientsComponent implements OnInit {
   newClientPopup = false;
 
   clients: Client[] = [];
+  clientChunks: Client[] = [];
   selectedClient: Client;
+  private pagination = {
+    page: 0,
+    length: 0,
+    array_chunks: []
+  };
 
   constructor(private _pageloaderService: pageloaderService,
     private router: Router, private _clientService: ClientService, private _broadCastSelectedUser: BroadCastSelectedUserService) { }
@@ -27,11 +33,30 @@ export class ClientsComponent implements OnInit {
 
   getClients() {
     this._clientService.getClients().subscribe(
-      (payload : any) => {
-        this.clients = payload.data;
+      (payload: any) => {
+        this.clients = JSON.parse(JSON.stringify(payload.data));
+        this.pagination.array_chunks = this.chunkArray(3);
+        this.pagination.length = this.pagination.array_chunks.length;
+        // Call the loadMore() method to do the first pagination
+        this.loadMore();
       },
       (error) => { }
     );
+  }
+
+  private chunkArray(chunk_size) {
+    const results = [];
+    while (this.clients.length) {
+      results.push(this.clients.splice(0, chunk_size));
+    }
+    return results;
+  }
+
+  public loadMore() {
+    if (this.pagination.page < this.pagination.length) {
+      this.clientChunks = this.clientChunks.concat(this.pagination.array_chunks[this.pagination.page]);
+      this.pagination.page += 1;
+    }
   }
 
   onSelectedClient(client) {
