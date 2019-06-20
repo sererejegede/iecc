@@ -12,9 +12,12 @@ import { AgmCoreModule } from '@agm/core';
 import { ForgetPasswordComponent } from './auth/forget-password/forget-password.component';
 import { NewPasswordComponent } from './auth/new-password/new-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RxReactiveFormsModule } from "@rxweb/reactive-form-validators"
+import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
 
-import { NgxUiLoaderModule, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule, NgxUiLoaderConfig, POSITION, SPINNER, PB_DIRECTION } from  'ngx-ui-loader';
+import { NgxUiLoaderModule,
+  NgxUiLoaderRouterModule,
+  NgxUiLoaderHttpModule,
+  NgxUiLoaderConfig, POSITION, SPINNER, PB_DIRECTION } from 'ngx-ui-loader';
 
 import swal from 'sweetalert2';
 import { UserService } from './services/user.service';
@@ -22,6 +25,7 @@ import { ClientService } from './services/clients.service';
 import { RoasterService } from './services/roaster.service';
 import { CoolStorageModule } from 'angular2-cool-storage';
 import { RequestService } from './services/request.service';
+import { TrainingService } from './services/training.service';
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
@@ -58,7 +62,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     UserService,
     ClientService,
     RoasterService,
-    RequestService
+    RequestService,
+    TrainingService
   ],
   bootstrap: [AppComponent]
 })

@@ -11,41 +11,21 @@
         <div class="topAction">
           <h5>{{selectedDate | date}}</h5>
         </div>
-        <div class="rotaDetail">
-          <i class="fa fa-plus"></i>
+        <div class="rotaDetail" *ngFor="let training of dateTrainings; let i = index">
+          <!--<i class="fa fa-plus"></i>-->
           <div>
-            <a>Health Care Camp.</a><br>
+            <a>{{ training?.title }}</a><br>
             <small>London</small>
           </div>
           <div>
-            <div>8:00am - 12:00pm</div>
-          </div>
-        </div>
-        <div class="rotaDetail">
-          <i class="fa fa-plus"></i>
-          <div>
-            <a>Health Care Camp.</a><br>
-            <small>London</small>
-          </div>
-          <div>
-            <div>8:00am - 12:00pm</div>
-          </div>
-        </div>
-        <div class="rotaDetail">
-          <i class="fa fa-plus"></i>
-          <div>
-            <a>Health Care Camp.</a><br>
-            <small>London</small>
-          </div>
-          <div>
-            <div>8:00am - 12:00pm</div>
+            <div>{{ training?.startTime }} - {{ training?.endTime }}</div>
           </div>
         </div>
       </div>
 
     </div>
     <div class="calendarView">
-      <mat-calendar #calendar [(selected)]="selectedDate" ></mat-calendar>
+      <mat-calendar #calendar [(selected)]="selectedDate" (selectedChange)="setDate($event)" ></mat-calendar>
     </div>
   </div>
 </div>

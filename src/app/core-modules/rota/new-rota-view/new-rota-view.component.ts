@@ -16,56 +16,20 @@ import swal from 'sweetalert2';
 })
 export class NewRotaViewComponent implements OnInit {
 
-  switch = false;
-  nrScreen = true;
-  newRoaster = false;
-  rotaDetail = false;
-  swap = {
+  public switch = false;
+  public nrScreen = true;
+  public newRoaster = false;
+  public rotaDetail = false;
+  public swap = {
     index: 0,
     firstRoasterId: 0,
     secondRoasterId: 0
   };
-  user;
-  roaster: Roaster[] = [];
-
-  rotadate = new FormControl(new Date());
-  todos = [
-    {
-      name: 'Omolere Abiodun',
-      category: 'London'
-    },
-    {
-      name: 'Onafowora Hammed',
-      category: 'Lagos, Nigeria'
-    },
-    {
-      name: 'George Kingsley',
-      category: 'Akra, Ghana'
-    },
-    {
-      name: 'Loveth Christian',
-      category: 'South Africa'
-    }
-  ];
-
-  completed = [
-    {
-      name: 'Gabriel Okeke',
-      category: 'Lagos, Nigeria'
-    },
-    {
-      name: 'Nurudeen Njidda',
-      category: 'Adamawa, Nigeria'
-    },
-    {
-      name: 'Imolara Kazeem',
-      category: 'Togoy'
-    },
-    {
-      name: 'Orefuyi Damilola',
-      category: 'Oyo, Nigeria'
-    }
-  ];
+  public user;
+  public roaster: Roaster[] = [];
+  public rotadate = new FormControl(new Date());
+  public todos = [];
+  public completed = [];
   public users: any[] = [];
   public selectedRoaster: any;
 
