@@ -214,7 +214,7 @@
     </form>
 
     <div class="btn-wrap">
-      <div (click)="onSaveClient()" class="primary-btn">Submit</div>
+      <div (click)="selectedClient ? updateClient() : onSaveClient()" class="primary-btn">Submit</div>
     </div>
   </div>
 </div>

@@ -44,13 +44,26 @@ export class ClientsComponent implements OnInit {
     this.newClientPopup = false;
   }
 
+  public getUpdatedClient(client) {
+    console.log(this.selectedClient);
+    if (this.selectedClient['index'] || this.selectedClient['index'] === 0) {
+      this.clients.splice(this.selectedClient['index'], 1, client.data);
+    }
+  }
 
-  onShowNewClient(client) {
+
+  onShowNewClient(client?, index?) {
+    if ((index || index === 0) && client) {
+      this.selectedClient = client;
+      this.selectedClient['index'] = index;
+    } else {
+      this.selectedClient = null;
+    }
     this.newClientPopup = true;
-    this.selectedClient = client;
   }
 
   onShowDetail() {
     this.router.navigate(['core-module/client-details']);
+    // this.router.navigateByUrl('core-module/client-details');
   }
 }
