@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import {Component, OnInit, EventEmitter, Output, Input} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ClientService } from 'src/app/services/clients.service';
@@ -22,7 +22,8 @@ export class NewRosterComponent implements OnInit {
   users: any;
   roasterForm: FormGroup;
 
-  @Output() closeModal: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Input() selectedRoaster;
+  @Output() closeModal: EventEmitter<any> = new EventEmitter<any>();
   constructor(
     private _locker: CoolLocalStorage,
     private _clientService: ClientService,
@@ -40,22 +41,45 @@ export class NewRosterComponent implements OnInit {
       status: ['', []],
       selectedClientId: ['', []],
       starts: ['', []],
-      ends: ['', []]
+      ends: ['', []],
+      location: ['']
     });
     // this.user = this._locker.getObject('selectedUser');
-    this._clientService.getClients().subscribe(
-      (payload: any) => {
-        this.clients = payload.data;
+    this.getClients();
+    this.getStaff();
+  }
+
+  private patchValue() {
+    console.log(this.selectedRoaster);
+    const data: any = {
+      starts: new Date(this.selectedRoaster.shift.starts).toTimeString().slice(0, 8),
+      ends: new Date(this.selectedRoaster.shift.ends).toTimeString().slice(0, 8),
+      location: this.selectedRoaster.location ? this.selectedRoaster.location : '',
+      selectedClientId: this.selectedRoaster.clientId
+    };
+    this.roasterForm.patchValue(data);
+    console.log(this.roasterForm.value);
+  }
+
+  private getStaff() {
+    this._userService.getStaffs().subscribe(
+      (payloadU: any) => {
+        this.users = payloadU.data;
+        console.log(payloadU);
       },
       (error) => {
         console.log(error);
       }
     );
+  }
 
-    this._userService.getStaffs().subscribe(
-      (payloadU: any) => {
-        this.users = payloadU.data;
-        console.log(payloadU);
+  private getClients() {
+    this._clientService.getClients().subscribe(
+      (payload: any) => {
+        this.clients = payload.data;
+        if (this.selectedRoaster) {
+          this.patchValue();
+        }
       },
       (error) => {
         console.log(error);
@@ -68,11 +92,12 @@ export class NewRosterComponent implements OnInit {
       userId: this.roasterForm.controls['selectedUserId'].value.id,
       clientId: this.roasterForm.controls['selectedClientId'].value.id,
       status: this.roasterForm.controls['status'].value,
+      location: this.roasterForm.controls['location'].value,
       shift: <IRoasterShift>({
         starts: this.roasterForm.controls['starts'].value,
         ends: this.roasterForm.controls['ends'].value
       })
-    }
+    };
     this._roasterService.postRoater(roasterModel).subscribe(
       (payload) => {
         Swal.fire({
@@ -87,7 +112,7 @@ export class NewRosterComponent implements OnInit {
       (error) => {
         Swal.fire({
           type: 'warning',
-          title: 'Error sSving',
+          title: 'Error saving',
           showConfirmButton: false,
           timer: 1500
         });
@@ -96,8 +121,29 @@ export class NewRosterComponent implements OnInit {
     )
   }
 
+  public updateRoaster() {
+    this.roasterForm.value['clientId'] = this.roasterForm.value.selectedClientId;
+    this._roasterService.updateRoaster(this.selectedRoaster._id, this.roasterForm.value).subscribe((res: any) => {
+      Swal.fire({
+        type: 'success',
+        title: 'Updated successfully',
+        showConfirmButton: false,
+        timer: 1500
+      });
+      this.close_onClick(res);
+      console.log(res);
+    }, err => {
+      Swal.fire({
+        type: 'error',
+        title: 'Error updating',
+        showConfirmButton: false,
+        timer: 1500
+      });
+    });
+  }
 
-  close_onClick() {
-    this.closeModal.emit(true);
+
+  close_onClick(type?: any) {
+    this.closeModal.emit(type);
   }
 }

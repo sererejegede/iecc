@@ -44,8 +44,8 @@
             </mat-card-header>
             <div class="crd-body">
               <div>
-                <h6>{{complete?.user?.firstName}} {{complete?.user?.lastName}}</h6>
-                <a>{{complete?.address}}</a>
+                <h6>{{complete?.client?.name}}</h6>
+                <a>{{complete?.client?.address}}</a>
               </div>
               <div>
                 <a>{{ complete?.shift?.starts | date }} - {{ complete?.shift?.ends | date }}</a><br>
@@ -67,13 +67,13 @@
                 class="fas fa-ellipsis-v"></i>
               <div *ngIf="nrScreen" class="dropdown-menu" aria-labelledby="dropdownMenu2">
                 <a (click)="onSelectSwitchBtn(todo?._id, i)" class="dropdown-item">Switch Shift</a>
-                <a (click)="onShowAddRota()" class="dropdown-item">Edit Shift</a>
+                <a (click)="onShowAddRota(todo, i)" class="dropdown-item">Edit Shift</a>
               </div>
             </mat-card-header>
             <div class="crd-body" (click)="onShowRotaDetail(todo, i)">
               <div>
-                <h6>{{todo?.user?.firstName}} {{todo?.user?.lastName}}</h6>
-                <a>{{todo?.user?.address}}</a>
+                <h6>{{todo?.client?.name}}</h6>
+                <a>{{todo?.client?.address}}</a>
               </div>
               <div>
                 <a>{{ todo?.shift?.starts | date }} - {{ todo?.shift?.ends | date }}</a><br>
@@ -94,7 +94,7 @@
 
 
 <div *ngIf="newRoaster" class="modal-overlay">
-  <app-new-roster (closeModal)="close_onClick($event)" id="form-modal" class="form-modal center-center">
+  <app-new-roster [selectedRoaster]="selectedRoaster" (closeModal)="close_onClick($event)" id="form-modal" class="form-modal center-center">
   </app-new-roster>
 </div>
 

@@ -25,6 +25,10 @@ export class RoasterService {
     return this.http.get<Roaster>(this.baseUrl + `/roaster/shift/start/${date}`);
   }
 
+  public updateRoaster(roasterId, data) {
+    return this.http.put(`${this.baseUrl}/roaster/update/details/${roasterId}`, data);
+  }
+
   updateRoasterCompleted(roasterId) {
     return this.http.put(this.baseUrl + `/roaster/update/completed/${roasterId}`, {});
   }

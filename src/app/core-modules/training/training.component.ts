@@ -108,6 +108,7 @@ export class TrainingComponent implements OnInit {
       });
       this.trainings.push(res.data);
       this.setDate();
+      this.trainingForm.reset();
     }, err => {
       swal.fire({
         type: 'error',

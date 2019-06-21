@@ -1,6 +1,6 @@
 <div class="animated pulse">
   <div class="modal-header-wrap">
-    <div (click)="close_onClick()" class="modal-close-ico" aria-hidden="true">X</div>
+    <div (click)="close_onClick()" class="modal-close-ico" aria-hidden="true">&times;</div>
   </div>
   <div class="modal-baseWrap">
     <br>
@@ -38,22 +38,17 @@
           </div>
           <div class="grd_color"></div>
         </div>
-
         <div class="input-group-wrap">
           <div class="InputGroup">
             <mat-form-field>
-              <mat-label>Assignee</mat-label>
-              <mat-select formControlName="selectedUserId">
-                <mat-option *ngFor="let user of users" [value]="user._id">{{user.firstName}} {{user.lastName}}
-                </mat-option>
-              </mat-select>
+              <input matInput type="text" placeholder="Location" formControlName="location">
             </mat-form-field>
           </div>
           <div class="grd_color"></div>
         </div>
       </div>
 
-      <div class="input-group">
+      <div class="input-group" *ngIf="!selectedRoaster">
         <div class="input-group-wrap">
           <div class="InputGroup">
             <mat-form-field>
@@ -67,11 +62,23 @@
           </div>
           <div class="grd_color"></div>
         </div>
+        <div class="input-group-wrap">
+          <div class="InputGroup">
+            <mat-form-field>
+              <mat-label>Assignee</mat-label>
+              <mat-select formControlName="selectedUserId">
+                <mat-option *ngFor="let user of users" [value]="user._id">{{user.firstName}} {{user.lastName}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="grd_color"></div>
+        </div>
       </div>
     </form>
 
     <div class="btn-wrap">
-      <div (click)="onSaveRoaster()" class="primary-btn">Submit</div>
+      <div (click)="selectedRoaster ? updateRoaster() : onSaveRoaster()" class="primary-btn">Submit</div>
     </div>
   </div>
 </div>

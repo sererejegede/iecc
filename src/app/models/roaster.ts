@@ -5,6 +5,7 @@ export class Roaster {
     public userId: string;
     public status: string;
     public clientId: string;
+    public location: string;
     public shift: IRoasterShift;
 
     constructor(

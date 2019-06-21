@@ -30,12 +30,13 @@ export class NewRotaViewComponent implements OnInit {
   public rotadate = new FormControl(new Date());
   public todos = [];
   public completed = [];
-  public users: any[] = [];
+  public clients: any[] = [];
   public selectedRoaster: any;
 
   constructor(private _pageloaderService: pageloaderService,
     private _locker: CoolLocalStorage,
     private _userService: UserService,
+    private _clientService: ClientService,
     private _roasterService: RoasterService) { }
 
   ngOnInit() {
@@ -62,9 +63,9 @@ export class NewRotaViewComponent implements OnInit {
       (payload: any) => {
         this.roaster = payload;
         payload.data.forEach(load => {
-          this.users.forEach(user => {
-            if (load.userId === user._id) {
-              load['user'] = user;
+          this.clients.forEach(client => {
+            if (load.clientId === client._id) {
+              load['client'] = client;
             }
           });
         });
@@ -78,9 +79,9 @@ export class NewRotaViewComponent implements OnInit {
   }
 
   private getUsers() {
-    this._userService.getAllUser().subscribe(
+    this._clientService.getClients().subscribe(
       (payload: any) => {
-        this.users = payload.data;
+        this.clients = payload.data;
         this.getRoasterByDate(true);
       },
       (error) => {
@@ -90,17 +91,25 @@ export class NewRotaViewComponent implements OnInit {
   }
 
   close_onClick(e) {
+    // console.log('from modal', e);
     this.newRoaster = false;
     this.rotaDetail = false;
-    if (this.selectedRoaster.status === 'completed') {
-      this.todos.splice(this.selectedRoaster['index'], 1);
-      this.completed.unshift(this.selectedRoaster);
+    if (this.selectedRoaster) {
+      if (this.selectedRoaster.status === 'completed') {
+        this.todos.splice(this.selectedRoaster['index'], 1);
+        this.completed.unshift(this.selectedRoaster);
+      }
+      if (e && typeof e !== 'boolean') {
+        this.getRoasterByDate(true);
+      }
     }
   }
 
-  onShowAddRota() {
+  onShowAddRota(rota?, index?) {
     this.newRoaster = true;
     this.rotaDetail = false;
+    this.selectedRoaster = rota;
+    this.selectedRoaster['index'] = index;
   }
   onShowRotaDetail(roaster, index) {
     this.newRoaster = false;
