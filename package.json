@@ -30,7 +30,7 @@
     "@rxweb/reactive-form-validators": "^1.9.1",
     "angular-calendar-scheduler": "^1.0.10",
     "angular2-cool-storage": "^3.1.6",
-    "chart.js": "^2.8.0",
+    "chart.js": "^2.9.4",
     "core-js": "^2.5.4",
     "express": "^4.17.0",
     "flat-icons": "^1.0.0",
